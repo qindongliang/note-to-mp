@@ -117,65 +117,63 @@
 	overflow-x: auto;
 	white-space: pre;
 }
+
 /*
- * 终极修复：
- * 针对 CodeRenderer.ts 脚本生成的
- * <section>
- * <ul>...</ul>  (行号)
- * <pre>...<code/><code/><code/>...</pre> (内容)
- * 这种 HTML 结构，进行 CSS 重排。
+ * 终极修复 v3 (包含横向滚动修复)
  */
 
-/* 1. 重设 <section> 容器 */
+/* 1. 容器：使用 flex 布局 */
 .note-to-mp section.code-section {
-	display: flex;         /* 关键：让 <ul> (行号) 和 <pre> (内容) 左右并排 */
-
-	/* 将你原来 <pre> 上的样式移到这里 */
+	display: flex;
 	background-color: #fafaf9;
 	border-radius: 8px;
 	border-top: 3px solid rgb(200, 100, 66);
 	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
 	margin: 1.5em 8px;
-	overflow: hidden;      /* 关键：防止子元素溢出圆角 */
+	overflow: hidden; /* 裁剪圆角 */
 }
 
-/* 2. 设置行号 <ul> 的样式 */
+/* 2. 行号 <ul> */
 .note-to-mp section.code-section ul {
 	list-style: none;
-	padding: 1.2em; /* 和 <pre> 的内边距保持一致 */
+	padding: 1.2em;
 	margin: 0;
-	background-color: #f3f3f3; /* (可选) 给行号加个浅灰色底色 */
+	background-color: #f3f3f3;
 	color: #999;
 	font-size: 14px;
 	line-height: 1.5;
 	text-align: right;
-	user-select: none; /* (可选) 禁止选中行号 */
+	user-select: none;
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* 3. 重设 <pre> 标签 */
+/* 3. 代码 <pre> 容器 (负责滚动) */
 .note-to-mp section.code-section pre {
-	/* 移除所有被 <section> 继承走的样式 */
 	margin: 0;
 	background: none;
 	border: none;
 	box-shadow: none;
 	border-top: none;
 
-	/* 关键：让 <pre> 自动填满剩余空间 */
-	flex-grow: 1;
-	overflow-x: auto; /* 关键：只让 <pre> 内部可以横向滚动 */
+	flex-grow: 1; /* 占据剩余空间 */
+	overflow-x: auto !important; /* 关键：开启横向滚动 */
 
-	padding: 1.2em 1.2em 1.2em 0.8em; /* 调整内边距，给左侧行号留出空间 */
+	padding: 1.2em; /* 统一内边距 */
 }
 
-/* * 4. 修复内容换行问题 (111aabb)
- * 强制脚本生成的多个 <code> 标签换行
- */
+/* 4. 每一行代码 <code> (负责换行和宽度) */
 .note-to-mp section.code-section pre code {
-	display: block !important;   /* 关键：强制每个 <code> 标签都换行 */
-	white-space: pre !important;   /* 关键：保留 <code> 内部的空格 */
+	display: block !important;   /* 强制换行 */
+	white-space: pre !important;   /* 保留行内空格 */
 
-	/* 重置 <code> 标签的默认样式 */
+	/* * 关键修复：
+	 * 1. 宽度由内容撑开
+	 * 2. 短行也必须撑满
+	 */
+	width: max-content;
+	min-width: 100%;
+
+	/* 重置样式 */
 	background: none;
 	padding: 0;
 	color: rgb(63, 63, 63);
@@ -183,6 +181,8 @@
 	line-height: 1.5;
 	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+
 
 
 
@@ -215,7 +215,6 @@
 
 /* 无序列表 */
 .note-to-mp ul {
-    list-style: none;
     margin: 0em 8px 1.5em;
     padding: 0px;
     text-align: left;
