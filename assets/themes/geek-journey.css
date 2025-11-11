@@ -1,0 +1,428 @@
+/*
+ * Geek Journey Theme
+ * Inspired by极客杰尼's WeChat article style
+ * 温暖橙褐色调，现代简洁设计
+ */
+
+/* 全局样式 */
+.note-to-mp {
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    color: rgb(34, 34, 34);
+    background-color: rgb(250, 249, 245);
+    line-height: 1.75;
+    font-size: 15px;
+    padding: 8px;
+    margin: 0 auto;
+    max-width: 677px;
+}
+
+/* 段落 */
+.note-to-mp p {
+    margin: 1.2em 8px;
+    text-align: justify;
+    letter-spacing: 0.1em;
+    word-break: break-all;
+}
+
+/* 标题 - 一级标题 */
+.note-to-mp h1 {
+    margin: 1.5em 8px 0.75em 0px;
+    padding: 0.8em 1.5em;
+    background: rgb(200, 100, 66);
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(200, 100, 66, 0.2);
+}
+
+/* 标题 - 二级标题 */
+.note-to-mp h2 {
+    margin: 2em 8px 0.75em 0px;
+    padding: 0px 0px 0.5em 12px;
+    border-left: 4px solid rgb(200, 100, 66);
+    border-bottom: 1px dashed rgb(200, 100, 66);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: rgb(63, 63, 63);
+}
+
+/* 标题 - 三级标题 */
+.note-to-mp h3 {
+    margin: 2em 8px 0.75em 0px;
+    padding: 0px 0px 0.4em 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: rgb(63, 63, 63);
+    border-left: 4px solid rgb(200, 100, 66);
+    border-bottom: 1px dashed rgb(200, 100, 66);
+}
+
+/* 标题 - 四级标题 */
+.note-to-mp h4 {
+    margin: 1.5em 8px 0.5em 0px;
+    padding-left: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: rgb(63, 63, 63);
+    border-left: 4px solid rgb(200, 100, 66);
+}
+
+/* 标题 - 五级标题 */
+.note-to-mp h5 {
+    margin: 1.2em 8px 0.4em 0px;
+    padding-left: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: rgb(63, 63, 63);
+    border-left: 3px solid rgb(200, 100, 66);
+}
+
+/* 标题 - 六级标题 */
+.note-to-mp h6 {
+    margin: 1em 8px 0.3em 0px;
+    padding-left: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: rgb(63, 63, 63);
+    border-left: 2px solid rgb(200, 100, 66);
+}
+
+/* 强调文本 */
+.note-to-mp strong {
+    font-weight: bold;
+    color: rgb(200, 100, 66);
+}
+
+.note-to-mp em {
+    font-style: italic;
+    color: rgb(102, 102, 102);
+}
+
+/*!* 行内代码 *!*/
+.note-to-mp code {
+    background-color: rgba(200, 100, 66, 0.1);
+    color: rgb(200, 100, 66);
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 90%;
+	overflow-x: auto;
+	white-space: pre;
+}
+/*
+ * 终极修复：
+ * 针对 CodeRenderer.ts 脚本生成的
+ * <section>
+ * <ul>...</ul>  (行号)
+ * <pre>...<code/><code/><code/>...</pre> (内容)
+ * 这种 HTML 结构，进行 CSS 重排。
+ */
+
+/* 1. 重设 <section> 容器 */
+.note-to-mp section.code-section {
+	display: flex;         /* 关键：让 <ul> (行号) 和 <pre> (内容) 左右并排 */
+
+	/* 将你原来 <pre> 上的样式移到这里 */
+	background-color: #fafaf9;
+	border-radius: 8px;
+	border-top: 3px solid rgb(200, 100, 66);
+	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+	margin: 1.5em 8px;
+	overflow: hidden;      /* 关键：防止子元素溢出圆角 */
+}
+
+/* 2. 设置行号 <ul> 的样式 */
+.note-to-mp section.code-section ul {
+	list-style: none;
+	padding: 1.2em; /* 和 <pre> 的内边距保持一致 */
+	margin: 0;
+	background-color: #f3f3f3; /* (可选) 给行号加个浅灰色底色 */
+	color: #999;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: right;
+	user-select: none; /* (可选) 禁止选中行号 */
+}
+
+/* 3. 重设 <pre> 标签 */
+.note-to-mp section.code-section pre {
+	/* 移除所有被 <section> 继承走的样式 */
+	margin: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-top: none;
+
+	/* 关键：让 <pre> 自动填满剩余空间 */
+	flex-grow: 1;
+	overflow-x: auto; /* 关键：只让 <pre> 内部可以横向滚动 */
+
+	padding: 1.2em 1.2em 1.2em 0.8em; /* 调整内边距，给左侧行号留出空间 */
+}
+
+/* * 4. 修复内容换行问题 (111aabb)
+ * 强制脚本生成的多个 <code> 标签换行
+ */
+.note-to-mp section.code-section pre code {
+	display: block !important;   /* 关键：强制每个 <code> 标签都换行 */
+	white-space: pre !important;   /* 关键：保留 <code> 内部的空格 */
+
+	/* 重置 <code> 标签的默认样式 */
+	background: none;
+	padding: 0;
+	color: rgb(63, 63, 63);
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+
+/* 引用块 */
+.note-to-mp blockquote {
+    margin: 1.5em 0 2em;
+    padding: 1em 1em 1em 2em;
+    border-width: 0px 0px 0px 4px;
+    border-style: solid;
+    border-color: rgb(229, 229, 229) rgb(229, 229, 229) rgb(229, 229, 229) rgb(200, 100, 66);
+    border-radius: 6px;
+    background: rgb(247, 247, 247);
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 6px;
+}
+
+.note-to-mp blockquote p {
+    margin: 0px;
+    text-align: left;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 1em;
+    display: block;
+    letter-spacing: 0.1em;
+    color: rgb(63, 63, 63);
+    font-style: normal;
+    background: rgb(246, 246, 244);
+}
+
+/* 无序列表 */
+.note-to-mp ul {
+    list-style: none;
+    margin: 0em 8px 1.5em;
+    padding: 0px;
+    text-align: left;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(63, 63, 63);
+}
+
+.note-to-mp ul li {
+    margin: 0.5em 0px;
+    padding: 0px;
+    text-align: left;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(63, 63, 63);
+}
+
+/* 有序列表 */
+.note-to-mp ol {
+    /*list-style: none;*/
+    margin: 0em 8px 1.5em;
+    padding: 0px;
+    text-align: left;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(63, 63, 63);
+}
+
+.note-to-mp ol li {
+    margin: 0.5em 0px;
+    padding: 0px;
+    text-align: left;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(63, 63, 63);
+}
+
+/* 表格 */
+.note-to-mp table {
+    width: 100%;
+    margin: 16px 8px;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.note-to-mp th {
+    padding: 8px 12px;
+    border: 1px solid rgb(229, 229, 229);
+    background-color: rgb(246, 246, 244);
+    font-weight: bold;
+    text-align: left;
+}
+
+.note-to-mp td {
+    padding: 8px 12px;
+    border: 1px solid rgb(229, 229, 229);
+}
+
+/* 链接 */
+.note-to-mp a {
+    color: rgb(200, 100, 66);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 100, 66, 0.3);
+}
+
+/* 图片 */
+.note-to-mp figure {
+    margin: 1.5em 8px;
+    text-align: left;
+    line-height: 1.75;
+    font-size: 15px;
+    color: rgb(63, 63, 63);
+}
+
+.note-to-mp img {
+    display: block;
+    max-width: 100%;
+    margin: 0.1em auto 0.5em;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px;
+}
+
+.note-to-mp figcaption {
+    text-align: center;
+    line-height: 1.75;
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    font-size: 0.8em;
+    color: rgb(136, 136, 136);
+}
+
+/* 分隔线 */
+.note-to-mp hr {
+    border: none;
+    height: 1px;
+    margin: 2em 0px;
+    background: linear-gradient(to right, rgba(200, 100, 66, 0), rgba(200, 100, 66, 0.6), rgba(200, 100, 66, 0));
+}
+
+/* Callout 样式 */
+.note-callout-note {
+    border-left: 4px solid #478be6;
+    background: linear-gradient(135deg, rgba(71, 139, 230, 0.08), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(71, 139, 230, 0.2);
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em;
+    color: rgb(60, 60, 60);
+}
+
+.note-callout-tip {
+    border-left: 4px solid #57ab5a;
+    background: linear-gradient(135deg, rgba(87, 171, 90, 0.08), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(87, 171, 90, 0.2);
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em;
+    color: rgb(60, 60, 60);
+}
+
+.note-callout-important {
+    border-left: 4px solid #a855f7;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em;
+    color: rgb(60, 60, 60);
+}
+
+.note-callout-warning {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em;
+    color: rgb(60, 60, 60);
+}
+
+.note-callout-failure {
+    border-left: 4px solid #ef4444;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(255, 255, 255, 0.95));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em;
+    color: rgb(60, 60, 60);
+}
+
+/* 脚注 */
+.note-to-mp sup {
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: super;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.note-to-mp sup a {
+    color: inherit;
+    text-decoration: none;
+    border: none;
+    border-bottom: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    box-shadow: none;
+}
+
+/* 脚注区域 */
+.note-to-mp [role="doc-footnotes"] {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e5e5e5;
+}
+
+.note-to-mp [role="doc-footnotes"] ol {
+    list-style-type: decimal;
+    margin: 0;
+    padding-left: 1em;
+    padding-right: 0;
+}
+
+.note-to-mp [role="doc-footnotes"] li {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.3em;
+}
+
+.note-to-mp .footnote-backref {
+    margin-left: 0.5em;
+}
+
+/* 高亮文本 */
+.note-highlight {
+    background-color: rgba(200, 100, 66, 0.1);
+    padding: 0 2px;
+}
+
+.note-to-mp pre .hljs-ln-code,
+.note-to-mp pre .hljs-ln-line {
+	white-space: pre !important; /* 必须用 !important 提高优先级 */
+}
