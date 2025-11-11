@@ -38,6 +38,8 @@ import { Topic } from "./topic";
 import { HeadingRenderer } from "./heading";
 import { FootnoteRenderer } from "./footnote";
 import { EmptyLineRenderer } from "./empty-line";
+import { GalleryRenderer } from "./gallery";
+import { LongImageRenderer } from "./long-image";
 import { cleanUrl } from "../utils";
 
 
@@ -126,6 +128,8 @@ export class MarkedParser {
 		this.extensions.push(new Topic(app, settings, assetsManager, callback));
 		this.extensions.push(new HeadingRenderer(app, settings, assetsManager, callback));
 		this.extensions.push(new FootnoteRenderer(app, settings, assetsManager, callback));
+		this.extensions.push(new GalleryRenderer(app, settings, assetsManager, callback));
+		this.extensions.push(new LongImageRenderer(app, settings, assetsManager, callback));
 		if (settings.enableEmptyLine) {
 			this.extensions.push(new EmptyLineRenderer(app, settings, assetsManager, callback));
 		}

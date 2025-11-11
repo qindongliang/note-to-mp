@@ -139,7 +139,8 @@ export class CodeRenderer extends Extension {
 
 	async codeRenderer(code: string, infostring: string | undefined) {
 		const lang = (infostring || '').match(/^\S*/)?.[0];
-		code = code.replace(/\n$/, '');
+		// code = code.replace(/\n$/, '');
+		code = code.trimEnd();
 
 		try {
 			if (lang && hljs.getLanguage(lang)) {

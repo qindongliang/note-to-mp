@@ -50,17 +50,33 @@ export class LinkRenderer extends Extension {
                     if (token.href.startsWith('mailto:')) {
                         return token.text;
                     }
-                    if (token.text.indexOf(token.href) === 0
-                        || (token.href.indexOf('https://mp.weixin.qq.com/mp') === 0)
+
+                    // 检查是否是微信链接（直接显示）
+                    if ((token.href.indexOf('https://mp.weixin.qq.com/mp') === 0)
                         || (token.href.indexOf('https://mp.weixin.qq.com/s') === 0)) {
-                        return `<a href="${token.href}">${token.text}</a>`;
+                        return `<a href="${token.href}" target="_blank" rel="noopener noreferrer">${token.text}</a>`;
                     }
-                    this.allLinks.push(token.href);
-                    if (this.settings.linkStyle == 'footnote') {
-                        return `<a>${token.text}<sup>[${this.allLinks.length}]</sup></a>`;
+
+                    // 检查链接文本是否就是URL（如果是这样，直接显示为链接）
+                    if (token.text === token.href) {
+                        // 如果不是脚注模式，直接渲染为链接
+                        if (this.settings.linkStyle !== 'footnote') {
+                            return `<a href="${token.href}" target="_blank" rel="noopener noreferrer">${token.text}</a>`;
+                        }
+                        // 如果是脚注模式，添加到脚注列表
+                        this.allLinks.push(token.href);
+                        return `<a href="${token.href}" target="_blank" rel="noopener noreferrer">${token.text}<sup>[${this.allLinks.length}]</sup></a>`;
                     }
-                    else {
-                        return `<a>${token.text}[${token.href}]</a>`;
+
+                    // 其他情况：根据设置决定渲染方式
+                    if (this.settings.linkStyle === 'footnote') {
+                        // 脚注模式：添加到脚注列表，返回带脚注的链接
+                        this.allLinks.push(token.href);
+                        const index = this.allLinks.length;
+                        return `<a href="${token.href}" target="_blank" rel="noopener noreferrer">${token.text}<sup>[${index}]</sup></a>`;
+                    } else {
+                        // 普通模式：直接渲染为链接（不显示URL）
+                        return `<a href="${token.href}" target="_blank" rel="noopener noreferrer">${token.text}</a>`;
                     }
                 }
             }]
