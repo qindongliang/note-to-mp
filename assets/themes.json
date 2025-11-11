@@ -1,9 +1,39 @@
 [
     {
+        "name": "微信蓝",
+        "className": "wechat-blue",
+        "desc": "经典微信公众号蓝白配色，清新专业的视觉风格，完美适配微信阅读体验",
+        "author": "Sun Booshi"
+    },
+    {
+        "name": "苹果彩虹",
+        "className": "apple-gradient",
+        "desc": "苹果风格多彩渐变主题，灵感来源于Apple设计语言，现代玻璃态效果",
+        "author": "Sun Booshi"
+    },
+    {
         "name": "极客杰尼",
         "className": "geek-journey",
         "desc": "温暖橙褐色调，现代简洁设计，灵感来源于极客杰尼的微信公众号排版风格",
         "author": "Geek Journey"
+    },
+    {
+        "name": "Titillium彩虹",
+        "className": "titillium-gradient",
+        "desc": "Titillium Web字体风格，活力三色渐变设计，大圆角现代风格",
+        "author": "Sun Booshi"
+    },
+    {
+        "name": "中式红韵",
+        "className": "zhongshi-hongyun",
+        "desc": "中式传统风格，红色韵律，楷体衬线字体，虚线下边框装饰",
+        "author": "Sun Booshi"
+    },
+    {
+        "name": "极光紫韵",
+        "className": "aurora-purple",
+        "desc": "极光紫韵主题，粉紫蓝三色渐变，现代玻璃态效果，径向渐变背景",
+        "author": "Sun Booshi"
     },
     {
         "name": "Maple",
