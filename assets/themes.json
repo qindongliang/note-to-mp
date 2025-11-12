@@ -1,6 +1,12 @@
 [
+	{
+		"name": "技术极简",
+		"className": "tencent-tech",
+		"desc": "适用于技术分享、架构设计、代码重构等文章",
+		"author": "AI Assistant"
+	},
     {
-        "name": "微信蓝",
+        "name": "渐变炫蓝",
         "className": "wechat-blue",
         "desc": "经典微信公众号蓝白配色，清新专业的视觉风格，完美适配微信阅读体验",
         "author": "Sun Booshi"
@@ -12,19 +18,19 @@
         "author": "Sun Booshi"
     },
     {
-        "name": "极客杰尼",
+        "name": "秋日暖橙",
         "className": "geek-journey",
         "desc": "温暖橙褐色调，现代简洁设计，灵感来源于极客杰尼的微信公众号排版风格",
         "author": "Geek Journey"
     },
     {
-        "name": "Titillium彩虹",
+        "name": "活力森林",
         "className": "titillium-gradient",
         "desc": "Titillium Web字体风格，活力三色渐变设计，大圆角现代风格",
         "author": "Sun Booshi"
     },
     {
-        "name": "中式红韵",
+        "name": "中华复古",
         "className": "zhongshi-hongyun",
         "desc": "中式传统风格，红色韵律，楷体衬线字体，虚线下边框装饰",
         "author": "Sun Booshi"

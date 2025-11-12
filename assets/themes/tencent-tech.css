@@ -1,0 +1,219 @@
+/**
+ * 腾讯技术文档主题
+ * 基于腾讯技术公众号文章的专业样式
+ * 适用于技术分享、架构设计、代码重构等文章
+ */
+
+.note-to-mp {
+    font-family: 'PingFang SC', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    line-height: 1.75;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+/* 正文段落 */
+.note-to-mp p {
+    margin: 1em 0;
+    padding: 0;
+    color: #333;
+    text-align: justify;
+    line-height: 1.75;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    word-wrap: break-word;
+}
+
+/* 标题样式 */
+.note-to-mp h1 {
+    margin: 1.5em 0 1em;
+    padding: 0.5em 0;
+    color: #1f44ac;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 2px solid #e8e8e8;
+    background: linear-gradient(to right, rgba(31, 68, 172, 0.05), rgba(31, 68, 172, 0.02));
+}
+
+.note-to-mp h2 {
+    margin: 2em 0 1em;
+    padding: 0.8em 1em;
+    color: #1f44ac;
+    background: rgba(31, 68, 172, 0.08);
+    font-size: 20px;
+    font-weight: 600;
+    border-left: 4px solid #1f44ac;
+    border-radius: 0 8px 8px 0;
+}
+
+.note-to-mp h3 {
+    margin: 1.5em 0 0.8em;
+    color: #2a5caa;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #d0e0f0;
+    padding-bottom: 0.3em;
+}
+
+/* 强调文本 */
+.note-to-mp strong,
+.note-to-mp b {
+    color: #0052ff;
+    font-weight: 700;
+    background: rgba(0, 82, 255, 0.08);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* 引用样式 */
+.note-to-mp blockquote {
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    background: rgba(31, 68, 172, 0.05);
+    border-left: 4px solid #1f44ac;
+    border-radius: 0 8px 8px 0;
+    color: #555;
+}
+
+
+/*
+ * 终极修复 v3 (包含横向滚动修复)
+ */
+
+/* 1. 容器：使用 flex 布局 */
+.note-to-mp section.code-section {
+	display: flex;
+	background-color: #fafaf9;
+	border-radius: 8px;
+	border-top: 3px solid #007aff;
+	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+	margin: 1.5em 8px;
+	overflow: hidden; /* 裁剪圆角 */
+}
+
+/* 2. 行号 <ul> */
+.note-to-mp section.code-section ul {
+	list-style: none;
+	padding: 1.2em;
+	margin: 0;
+	background-color: #f3f3f3;
+	color: #999;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: right;
+	user-select: none;
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 3. 代码 <pre> 容器 (负责滚动) */
+.note-to-mp section.code-section pre {
+	margin: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-top: none;
+
+	flex-grow: 1; /* 占据剩余空间 */
+	overflow-x: auto !important; /* 关键：开启横向滚动 */
+
+	padding: 1.2em; /* 统一内边距 */
+}
+
+/* 4. 每一行代码 <code> (负责换行和宽度) */
+.note-to-mp section.code-section pre code {
+	display: block !important;   /* 强制换行 */
+	white-space: pre !important;   /* 保留行内空格 */
+
+	/* * 关键修复：
+	 * 1. 宽度由内容撑开
+	 * 2. 短行也必须撑满
+	 */
+	width: max-content;
+	min-width: 100%;
+
+	/* 重置样式 */
+	background: none;
+	padding: 0;
+	color: rgb(63, 63, 63);
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* 修复：隐藏空code元素，防止产生多余空行 */
+.note-to-mp section.code-section pre code:empty {
+	display: none !important;
+}
+
+/* 列表样式 */
+.note-to-mp ul,
+.note-to-mp ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.note-to-mp li {
+    margin: 0.5em 0;
+    color: #333;
+    line-height: 1.75;
+}
+
+/* 链接样式 */
+.note-to-mp a {
+    color: #1f44ac;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(31, 68, 172, 0.3);
+}
+
+.note-to-mp a:hover {
+    color: #0052ff;
+    border-bottom-color: #0052ff;
+}
+
+/* 表格样式 */
+.note-to-mp table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.note-to-mp th {
+    background: linear-gradient(to right, #1f44ac, #2a5caa);
+    color: #fff;
+    padding: 1em;
+    text-align: left;
+    font-weight: 600;
+}
+
+.note-to-mp td {
+    padding: 0.8em 1em;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333;
+}
+
+.note-to-mp tr:nth-child(even) {
+    background: rgba(31, 68, 172, 0.02);
+}
+
+/* 图片样式 */
+.note-to-mp img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 1em 0;
+}
+
+/* 分割线 */
+.note-to-mp hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #1f44ac, transparent);
+    margin: 2em 0;
+}
