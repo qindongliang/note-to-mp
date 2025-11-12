@@ -168,13 +168,19 @@
 .note-to-mp ul,
 .note-to-mp ol {
     margin: 1em 0;
-    padding-left: 2em;
+    padding-left: 2.5em; /* 调整左侧内边距，确保项目符号不溢出 */
+    list-style-position: outside; /* 项目符号在内容区域外 */
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp li {
     margin: 0.5em 0;
     color: #333;
     line-height: 1.75;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 /* 链接样式 */

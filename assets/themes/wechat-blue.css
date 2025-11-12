@@ -193,13 +193,17 @@
 
 /* 无序列表 */
 .note-to-mp ul {
-	margin: 1em 10px;
-    padding: 0;
+	margin: 1em 0;
+    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
     text-align: left;
     line-height: 1.8;
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
+    list-style-type: disc; /* 明确设置项目符号类型 */
+    list-style-position: outside; /* 项目符号在内容区域外 */
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ul li {
@@ -210,17 +214,24 @@
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 /* 有序列表 */
 .note-to-mp ol {
-	margin: 1em 10px;
-    padding: 0;
+	margin: 1em 0;
+    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
     text-align: left;
     line-height: 1.8;
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
+    list-style-type: decimal; /* 明确设置项目符号类型 */
+    list-style-position: outside; /* 项目符号在内容区域外 */
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ol li {
@@ -231,6 +242,9 @@
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 /* 分割线 */
@@ -437,8 +451,10 @@
 .note-to-mp .footnotes ol {
     list-style-type: decimal;
     margin: 0;
-    padding-left: 1em;
+    padding-left: 1.8em; /* 增加左侧内边距 */
     padding-right: 0;
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp .footnotes li {
@@ -446,6 +462,9 @@
     color: #8a919f;
     line-height: 1.6;
     margin-bottom: 0.3em;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 .note-to-mp .footnotes li p {

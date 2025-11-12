@@ -202,9 +202,13 @@
 
 /* 无序列表 */
 .note-to-mp ul {
-    margin: 1em 10px;
-    padding: 0;
+    margin: 1em 0;
+    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
     font-size: 14px;
+    list-style-type: disc; /* 明确设置项目符号类型 */
+    list-style-position: outside; /* 项目符号在内容区域外 */
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ul li {
@@ -212,13 +216,20 @@
     padding: 0;
     line-height: 1.8;
     font-size: 14px;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 /* 有序列表 */
 .note-to-mp ol {
-    margin: 1em 10px;
-    padding: 0;
+    margin: 1em 0;
+    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
     font-size: 14px;
+    list-style-type: decimal; /* 明确设置项目符号类型 */
+    list-style-position: outside; /* 项目符号在内容区域外 */
+    overflow: hidden; /* 防止溢出 */
+    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ol li {
@@ -226,6 +237,9 @@
     padding: 0;
     line-height: 1.8;
     font-size: 14px;
+    word-wrap: break-word; /* 长文本自动换行 */
+    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
 }
 
 /* 分割线 */
