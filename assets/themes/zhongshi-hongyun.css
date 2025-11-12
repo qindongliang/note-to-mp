@@ -245,18 +245,21 @@
 /* 1. 容器：使用 flex 布局 */
 .note-to-mp section.code-section {
 	display: flex;
+	align-items: flex-start; /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
 	background-color: #fafaf9;
 	border-radius: 8px;
 	border-top: 3px solid rgb(200, 100, 66);
 	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
 	margin: 1.5em 8px;
 	overflow: hidden; /* 裁剪圆角 */
+	min-height: auto; /* 确保高度自适应内容 */
+	box-sizing: border-box;
 }
 
 /* 2. 行号 <ul> */
 .note-to-mp section.code-section ul {
 	list-style: none;
-	padding: 1.2em;
+	padding: 1.2em 0.5em;
 	margin: 0;
 	background-color: #f3f3f3;
 	color: #999;
@@ -265,6 +268,15 @@
 	text-align: right;
 	user-select: none;
 	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+	width: 3em; /* 固定行号区域宽度，防止宽度波动 */
+	flex-shrink: 0; /* 防止行号区域被压缩 */
+}
+
+/* 修复行号 li 元素的默认边距 */
+.note-to-mp section.code-section ul li {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /* 3. 代码 <pre> 容器 (负责滚动) */
@@ -277,8 +289,11 @@
 
 	flex-grow: 1; /* 占据剩余空间 */
 	overflow-x: auto !important; /* 关键：开启横向滚动 */
+	overflow-y: visible !important; /* 确保内容高度自适应，避免多余空白 */
 
 	padding: 1.2em; /* 统一内边距 */
+	box-sizing: border-box;
+	min-height: 100%; /* 确保与行号区域高度一致 */
 }
 
 /* 4. 每一行代码 <code> (负责换行和宽度) */
@@ -298,10 +313,16 @@
 	padding: 0;
 	color: rgb(63, 63, 63);
 	font-size: 14px;
-	line-height: 1.5;
+	line-height: 1.5; /* 确保与行号行高一致 */
 	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+	box-sizing: border-box;
+	min-height: 100%; /* 确保与行号区域高度一致 */
 }
 
+/* 修复：隐藏空code元素，防止产生多余空行 */
+.note-to-mp section.code-section pre code:empty {
+	display: none !important;
+}
 
 /* 表格样式 */
 .note-to-mp table {
