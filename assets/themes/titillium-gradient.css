@@ -547,6 +547,52 @@
     scroll-snap-align: center;
 }
 
+/* 长图图片样式优化 */
+.note-to-mp .longimage-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: none; /* 移除高度限制，让长图自然显示 */
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
+    box-shadow: 0 6px 25px rgba(255, 102, 0, 0.25), 0 3px 12px rgba(0, 169, 104, 0.15);
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, rgba(255, 102, 0, 0.2), rgba(0, 169, 104, 0.2), rgba(56, 198, 244, 0.2)) 1;
+}
+
+.note-to-mp .longimage-container .longimage-scroll {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.01), rgba(0, 169, 104, 0.01), rgba(56, 198, 244, 0.01));
+}
+
+/* 针对Titillium渐变主题的移动端优化 */
+@media screen and (max-width: 768px) {
+    .note-to-mp .longimage-container {
+        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .note-to-mp .longimage-container .longimage-scroll {
+        max-height: 70vh; /* 移动端稍微减小高度 */
+        border-radius: 10px;
+    }
+
+    .note-to-mp .longimage-container img {
+        box-shadow: 0 4px 16px rgba(255, 102, 0, 0.2), 0 2px 8px rgba(0, 169, 104, 0.1);
+        border-width: 1px;
+    }
+}
+
 /* 对话样式 */
 .note-to-mp .dialogue-container {
     margin: 12px 8px 16px;

@@ -510,6 +510,53 @@
     scroll-snap-align: center;
 }
 
+/* 长图图片样式优化 */
+.note-to-mp .longimage-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: none; /* 移除高度限制，让长图自然显示 */
+    object-fit: contain;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
+    box-shadow: 0 8px 25px rgba(0, 122, 255, 0.2), 0 3px 8px rgba(88, 86, 214, 0.1);
+    border: 1px solid rgba(0, 122, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.note-to-mp .longimage-container .longimage-scroll {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.01), rgba(88, 86, 214, 0.01));
+    backdrop-filter: blur(20px);
+}
+
+/* 针对苹果渐变主题的移动端优化 */
+@media screen and (max-width: 768px) {
+    .note-to-mp .longimage-container {
+        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .note-to-mp .longimage-container .longimage-scroll {
+        max-height: 70vh; /* 移动端稍微减小高度 */
+        border-radius: 12px;
+    }
+
+    .note-to-mp .longimage-container img {
+        box-shadow: 0 6px 20px rgba(0, 122, 255, 0.15), 0 2px 6px rgba(88, 86, 214, 0.08);
+        border-radius: 12px;
+    }
+}
+
 /* 对话样式 */
 .note-to-mp .dialogue-container {
     margin: 12px 8px 16px;

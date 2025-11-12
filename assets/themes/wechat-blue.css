@@ -506,6 +506,43 @@
     border-bottom: 2px solid rgba(5, 212, 205, 0.4);
 }
 
+/* 长图图片样式优化 */
+.note-to-mp .longimage-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: none; /* 移除高度限制，让长图自然显示 */
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid rgba(5, 212, 205, 0.1);
+}
+
+.note-to-mp .longimage-container .longimage-scroll {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    border-radius: 8px; /* 添加圆角使滚动区域更美观 */
+}
+
+/* 针对微信的特殊优化 */
+@media screen and (max-width: 768px) {
+    .note-to-mp .longimage-container {
+        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        padding: 12px;
+    }
+
+    .note-to-mp .longimage-container .longimage-scroll {
+        max-height: 70vh; /* 移动端稍微减小高度 */
+    }
+}
+
 /* 画廊图片样式优化 */
 .note-to-mp .gallery-container img {
     max-width: 100%;
