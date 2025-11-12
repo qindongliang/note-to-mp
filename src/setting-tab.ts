@@ -58,11 +58,11 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 	}
 
 	async testWXInfo() {
-		const authKey = this.settings.authKey;
-		if (authKey.length == 0) {
-		    new Notice('请先设置authKey');
-		    return;
-		}
+		// const authKey = this.settings.authKey;
+		// if (authKey.length == 0) {
+		//     new Notice('请先设置authKey');
+		//     return;
+		// }
 	    const wxInfo = this.settings.wxInfo;
 		if (wxInfo.length == 0) {
 		    new Notice('请先设置公众号信息');

@@ -315,9 +315,7 @@ export class ArticleRender implements MDRendererCallback {
   }
 
   async uploadImages(appid: string) {
-    if (!this.settings.authKey) {
-      throw new Error('请先设置注册码（AuthKey）');
-    }
+    // AuthKey check disabled
 
     let metadata = this.getMetadata();
     if (metadata.appid) {
@@ -364,9 +362,7 @@ export class ArticleRender implements MDRendererCallback {
   }
 
   async postArticle(appid:string, localCover: File | null = null) {
-    if (!this.settings.authKey) {
-      throw new Error('请先设置注册码（AuthKey）');
-    }
+    // AuthKey check disabled
 
     let metadata = this.getMetadata();
     if (metadata.appid) {
@@ -442,9 +438,7 @@ export class ArticleRender implements MDRendererCallback {
   }
 
   async postImages(appid: string) {
-    if (!this.settings.authKey) {
-      throw new Error('请先设置注册码（AuthKey）');
-    }
+    // AuthKey check disabled
 
     let metadata = this.getMetadata();
     if (metadata.appid) {

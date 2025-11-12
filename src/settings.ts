@@ -195,9 +195,6 @@ export class NMPSettings {
     }
 
     isAuthKeyVaild() {
-        if (this.authKey.length == 0) return false;
-        if (this.isVip) return true;
-        if (this.expireat == null) return false;
-        return this.expireat > new Date();
+        return true; // Disable AuthKey validation
     }
 }
