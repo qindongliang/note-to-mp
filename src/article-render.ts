@@ -132,7 +132,7 @@ export class ArticleRender implements MDRendererCallback {
   getArticleContent() {
     const content = this.articleDiv.innerHTML;
     let html = applyCSS(content, this.getCSS());
-    // 处理话题多余内容
+    // 微信平台HTML清理规则
     html = html.replace(/rel="noopener nofollow"/g, '');
     html = html.replace(/target="_blank"/g, '');
     html = html.replace(/data-leaf=""/g, 'leaf=""');
@@ -307,8 +307,9 @@ export class ArticleRender implements MDRendererCallback {
       const data = res.json;
       throw new Error('获取token失败: ' + data.message);
     }
-    const token = res.json.token;
-    if (token === '') {
+    // 处理两种不同的响应格式：插件主机返回token，微信API直接返回access_token
+    const token = res.json.token || res.json.access_token;
+    if (!token || token === '') {
       throw new Error('获取token失败: ' + res.json.message);
     }
     return token;
@@ -363,7 +364,6 @@ export class ArticleRender implements MDRendererCallback {
 
   async postArticle(appid:string, localCover: File | null = null) {
     // AuthKey check disabled
-
     let metadata = this.getMetadata();
     if (metadata.appid) {
       appid = metadata.appid;

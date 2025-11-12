@@ -214,7 +214,13 @@ export class LocalImageManager {
         }
         catch (e) {
             console.error(e);
-            throw new Error('上传图片失败:' + e.message + '|' + url);
+            // 返回错误对象而不是抛出错误，保持与其他上传函数的一致性
+            return {
+                url: '',
+                media_id: '',
+                errcode: 1,
+                errmsg: (e as any).message || '下载图片失败'
+            };
         }
     }
 
@@ -276,6 +282,8 @@ export class LocalImageManager {
                     const msg = `上传图片失败: ${img.src} ${res.errcode} ${res.errmsg}`;
                     new Notice(msg);
                     console.error(msg);
+                    // 跳过失败的图片，不添加到images map
+                    continue;
                 }
                 const info = {
                     resUrl: img.src,
@@ -325,7 +333,7 @@ export class LocalImageManager {
                 value = this.images.get('#' + img.id);
             }
             if (value == null) continue;
-            if (value.url == null) continue;
+            if (!value.url || value.url === '') continue; // 只有URL有效时才替换
             img.setAttribute('src', value.url);
         }
     }

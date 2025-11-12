@@ -26,6 +26,17 @@ const PluginHost = 'https://obplugin.sunboshi.tech';
 
 // 获取token
 export async function wxGetToken(authkey:string, appid:string, secret:string) {
+    // 如果authkey为空，直接调用微信API获取token
+    if (!authkey) {
+        const url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`;
+        const res = await requestUrl({
+            url,
+            method: 'GET',
+            throw: false
+        });
+        return res;
+    }
+    // 否则使用插件主机的API
     const url = PluginHost + '/v1/wx/token';
     const body = {
         authkey,

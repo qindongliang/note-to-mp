@@ -58,11 +58,7 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 	}
 
 	async testWXInfo() {
-		// const authKey = this.settings.authKey;
-		// if (authKey.length == 0) {
-		//     new Notice('请先设置authKey');
-		//     return;
-		// }
+		const authKey = this.settings.authKey; // 取消注释，避免undefined
 	    const wxInfo = this.settings.wxInfo;
 		if (wxInfo.length == 0) {
 		    new Notice('请先设置公众号信息');
@@ -71,7 +67,7 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 		try {
 			const docUrl = 'https://mp.weixin.qq.com/s/rk5CTPGr5ftly8PtYgSjCQ';
 			for (let wx of wxInfo) {
-				const res = await wxGetToken(authKey, wx.appid, wx.secret.replace('SECRET', ''));
+				const res = await wxGetToken(authKey, wx.appid, wx.secret);
 				if (res.status != 200) {
 					const data = res.json;
 					const { code, message } = data;
@@ -91,7 +87,9 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 				}
 
 				const data = res.json;
-				if (data.token.length == 0) {
+				// 处理两种不同的响应格式：插件主机返回token，微信API直接返回access_token
+				const accessToken = data.token || data.access_token;
+				if (!accessToken || accessToken.length == 0) {
 					new Notice(`${wx.name}|${wx.appid} 测试失败`);
 					break
 				}
@@ -136,17 +134,21 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 		}
 
 		try {
-			const res = await wxEncrypt(this.settings.authKey, wechat);
-			if (res.status != 200) {
-				const data = res.json;
-				new Notice(`${data.message}`);
-				return false;
-			}
+			// Bypass encryption if authKey is empty
+			if (this.settings.authKey) {
+				const res = await wxEncrypt(this.settings.authKey, wechat);
+				if (res.status != 200) {
+					const data = res.json;
+					new Notice(`${data.message}`);
+					return false;
+				}
 
-			const data = res.json;
-			for (let wx of wechat) {
-				wx.secret = data[wx.appid];
+				const data = res.json;
+				for (let wx of wechat) {
+					wx.secret = data[wx.appid];
+				}
 			}
+			// If no authKey, store secrets in plain text
 
 			this.settings.wxInfo = wechat;
 			await this.plugin.saveSettings();
