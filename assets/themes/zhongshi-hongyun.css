@@ -479,6 +479,34 @@
     background-image: repeating-linear-gradient(45deg, rgba(139,30,34,0.02), rgba(139,30,34,0.02) 1px, transparent 1px, transparent 6px);
 }
 
+/* 画廊图片样式优化 */
+.note-to-mp .gallery-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(139, 30, 34, 0.2);
+}
+
+.note-to-mp .gallery-container .gallery-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.note-to-mp .gallery-container .gallery-item {
+    flex: 0 0 auto;
+    min-width: 280px;
+    max-width: 350px;
+    scroll-snap-align: center;
+}
+
 /* 对话样式 */
 .note-to-mp .dialogue-container {
     margin: 12px 8px 16px;

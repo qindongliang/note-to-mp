@@ -108,10 +108,10 @@ function renderGallery(token: GalleryToken, renderer: any): string {
         }
 
         return `
-            <div style="display: inline-block; width: 33.3333%; vertical-align: middle; box-sizing: border-box;">
+            <div style="display: inline-block; width: 100%; vertical-align: middle; box-sizing: border-box; flex: 0 0 auto; min-width: 280px; max-width: 350px;">
                 <section style="box-sizing: border-box;">
                     <section style="text-align: center; margin: 0 8px;">
-                        <img src="${imageSrc}" alt="${imageAlt}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">
+                        <img src="${imageSrc}" alt="${imageAlt}" style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto;">
                     </section>
                 </section>
             </div>
@@ -123,7 +123,7 @@ function renderGallery(token: GalleryToken, renderer: any): string {
         <section style="margin: 1.5em 8px 2em; padding: 16px; background: linear-gradient(135deg, rgba(200, 100, 66, 0.02), rgba(250, 249, 245, 0.95)); border: 1px solid rgba(200, 100, 66, 0.15); border-radius: 12px; box-shadow: 0 3px 12px rgba(200, 100, 66, 0.08); position: relative; overflow: hidden;">
             <section style="margin: 0; padding: 0; box-sizing: border-box;">
                 <section style="display: inline-block; width: 100%; vertical-align: top; overflow-x: auto; scroll-snap-type: x mandatory; overflow-y: hidden; padding-right: 3px; padding-left: 3px; box-sizing: border-box;">
-                    <section style="width: ${token.images.length * 100}%; min-width: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+                    <section style="width: auto; min-width: 100%; box-sizing: border-box; display: flex; justify-content: flex-start; align-items: center; gap: 8px; flex-wrap: nowrap; overflow-x: auto;">
                         ${imageHtml}
                     </section>
                 </section>
@@ -202,11 +202,11 @@ export class GalleryRenderer extends Extension {
                         // 包装图片到容器中并添加样式
                         const styledImageHtml = imgTag.replace(
                             /<img([^>]+)>/,
-                            `<img$1 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; display: block; margin: 0 auto;">`
+                            `<img$1 style="width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 8px; display: block; margin: 0 auto;">`
                         );
 
                         return `
-                            <div style="display: inline-block; width: 33.3333%; vertical-align: middle; box-sizing: border-box;">
+                            <div style="display: inline-block; width: 100%; vertical-align: middle; box-sizing: border-box; flex: 0 0 auto; min-width: 280px; max-width: 350px;">
                                 <section style="box-sizing: border-box;">
                                     <section style="text-align: center; margin: 0 8px;">
                                         ${styledImageHtml}
@@ -218,7 +218,7 @@ export class GalleryRenderer extends Extension {
 
                     const replacement = `
                         <section style="display: inline-block; width: 100%; vertical-align: top; overflow-x: auto; scroll-snap-type: x mandatory; overflow-y: hidden; padding-right: 3px; padding-left: 3px; box-sizing: border-box;">
-                            <section style="width: ${imgMatches.length * 100}%; min-width: 100%; box-sizing: border-box; display: flex; justify-content: center; align-items: center;">
+                            <section style="width: auto; min-width: 100%; box-sizing: border-box; display: flex; justify-content: flex-start; align-items: center; gap: 8px; flex-wrap: nowrap; overflow-x: auto;">
                                 ${imageHtml}
                             </section>
                         </section>
