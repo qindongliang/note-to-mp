@@ -12,6 +12,12 @@
         "author": "Sun Booshi"
     },
     {
+        "name": "现代白话",
+        "className": "simple-wechat",
+        "desc": "简洁现代的微信公众号排版样式，基于真实微信文章样式提取",
+        "author": "AI Assistant"
+    },
+    {
         "name": "苹果彩虹",
         "className": "apple-gradient",
         "desc": "苹果风格多彩渐变主题，灵感来源于Apple设计语言，现代玻璃态效果",

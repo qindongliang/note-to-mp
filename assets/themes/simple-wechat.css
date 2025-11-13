@@ -1,0 +1,269 @@
+/*
+ * TRAE SOLO 主题
+ * 基于微信公众号文章样式的简洁蓝白主题
+ */
+
+.note-to-mp {
+    font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
+    color: #1d2129;
+    background-color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 正文段落 */
+.note-to-mp section {
+    margin-bottom: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    visibility: visible;
+}
+
+.note-to-mp p {
+    margin-bottom: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* 文本样式 */
+.note-to-mp span.textstyle {
+    font-size: 16px;
+    visibility: visible;
+}
+
+/* 图片样式 */
+.note-to-mp img {
+    height: auto !important;
+    visibility: visible !important;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 居中对齐 */
+.note-to-mp section[style*="text-align: center"] {
+    text-align: center;
+}
+
+/* 标题样式 */
+.note-to-mp h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 1.5em 0 1em;
+    color: #1d2129;
+    text-align: center;
+}
+
+.note-to-mp h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 1.2em 0 0.8em;
+    color: #1d2129;
+    padding-left: 8px;
+    border-left: 4px solid #1677ff;
+}
+
+.note-to-mp h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 1em 0 0.6em;
+    color: #1d2129;
+}
+
+/* 加粗文本 */
+.note-to-mp strong {
+    font-weight: bold;
+}
+
+/* 链接样式 */
+.note-to-mp a {
+    color: #1677ff;
+    text-decoration: none;
+    border-bottom: 1px solid #1677ff;
+}
+
+/* 列表样式 */
+.note-to-mp ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
+    list-style-type: disc;
+}
+
+.note-to-mp ol {
+    margin: 1em 0;
+    padding-left: 1.5em;
+    list-style-type: decimal;
+}
+
+.note-to-mp li {
+    margin: 0.5em 0;
+    font-size: 16px;
+}
+
+/* 引用样式 */
+.note-to-mp blockquote {
+    margin: 1.5em 8px;
+    padding: 1em;
+    border-left: 4px solid #1677ff;
+    background-color: #f7f7f7;
+    color: #666;
+    border-radius: 4px;
+}
+
+/* 分割线 */
+.note-to-mp hr {
+    height: 1px;
+    border: none;
+    margin: 2em 0;
+    background-color: #e5e5e5;
+}
+
+/* 2. 行号 <ul> */
+.note-to-mp section.code-section ul {
+	list-style: none;
+	padding: 1.2em 0.5em;
+	margin: 0;
+	background-color: #f3f3f3;
+	color: #999;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: right;
+	user-select: none;
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+	width: 3em; /* 固定行号区域宽度，防止宽度波动 */
+	flex-shrink: 0; /* 防止行号区域被压缩 */
+}
+
+/* 修复行号 li 元素的默认边距 */
+.note-to-mp section.code-section ul li {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*
+ * 终极修复 v3 (包含横向滚动修复)
+ */
+
+/* 1. 容器：使用 flex 布局 */
+.note-to-mp section.code-section {
+	display: flex;
+	align-items: flex-start; /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
+	background-color: #fafaf9;
+	border-radius: 8px;
+	border-top: 3px solid #05d4cd;
+	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+	margin: 1.5em 8px;
+	overflow: hidden; /* 裁剪圆角 */
+	min-height: auto; /* 确保高度自适应内容 */
+	box-sizing: border-box;
+}
+
+/* 3. 代码 <pre> 容器 (负责滚动) */
+.note-to-mp section.code-section pre {
+	margin: 0;
+	background: none;
+	border: none;
+	box-shadow: none;
+	border-top: none;
+
+	flex-grow: 1; /* 占据剩余空间 */
+	overflow-x: auto !important; /* 关键：开启横向滚动 */
+	overflow-y: visible !important; /* 确保内容高度自适应，避免多余空白 */
+
+	padding: 1.2em; /* 统一内边距 */
+	box-sizing: border-box;
+	min-height: 100%; /* 确保与行号区域高度一致 */
+}
+
+/* 4. 每一行代码 <code> (负责换行和宽度) */
+.note-to-mp section.code-section pre code {
+	display: block !important;   /* 强制换行 */
+	white-space: pre !important;   /* 保留行内空格 */
+
+	/* * 关键修复：
+	 * 1. 宽度由内容撑开
+	 * 2. 短行也必须撑满
+	 */
+	width: max-content;
+	min-width: 100%;
+
+	/* 重置样式 */
+	background: none;
+	padding: 0;
+	color: rgb(63, 63, 63);
+	font-size: 14px;
+	line-height: 1.5; /* 确保与行号行高一致 */
+	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+	box-sizing: border-box;
+	min-height: 100%; /* 确保与行号区域高度一致 */
+}
+
+/* 修复：隐藏空code元素，防止产生多余空行 */
+.note-to-mp section.code-section pre code:empty {
+	display: none !important;
+}
+
+/* 表格样式 */
+.note-to-mp table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 8px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.note-to-mp th {
+    background-color: #f7f7f7;
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.note-to-mp td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.note-to-mp tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 脚注样式 */
+.note-to-mp .footnotes {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e5e5e5;
+    font-size: 0.9em;
+}
+
+.note-to-mp .footnotes li {
+    margin: 0.5em 0;
+    color: #666;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .note-to-mp {
+        padding: 0 8px;
+    }
+
+    .note-to-mp section {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .note-to-mp p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .note-to-mp img {
+        width: 100% !important;
+    }
+}
