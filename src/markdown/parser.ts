@@ -41,6 +41,7 @@ import { EmptyLineRenderer } from "./empty-line";
 import { GalleryRenderer } from "./gallery";
 import { LongImageRenderer } from "./long-image";
 import { DialogueRenderer } from "./dialogue";
+import { SeqtitleRenderer } from "./seq-title";
 import { cleanUrl } from "../utils";
 
 
@@ -132,6 +133,7 @@ export class MarkedParser {
 		this.extensions.push(new GalleryRenderer(app, settings, assetsManager, callback));
 		this.extensions.push(new LongImageRenderer(app, settings, assetsManager, callback));
 		this.extensions.push(new DialogueRenderer(app, settings, assetsManager, callback));
+		this.extensions.push(new SeqtitleRenderer(app, settings, assetsManager, callback));
 		if (settings.enableEmptyLine) {
 			this.extensions.push(new EmptyLineRenderer(app, settings, assetsManager, callback));
 		}

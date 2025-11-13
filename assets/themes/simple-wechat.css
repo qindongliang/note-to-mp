@@ -247,6 +247,29 @@
     color: #666;
 }
 
+/* 序号标题排版 - 简洁风格 */
+.note-to-mp .seqtitle-container {
+    text-align: center;
+    margin: 2em 0;
+    padding: 1.5em 1em;
+}
+
+.note-to-mp .seqtitle-seq {
+    font-size: 3em;
+    font-weight: 600;
+    color: #1677ff;
+    margin: 0 0 0.5em 0;
+    line-height: 1;
+}
+
+.note-to-mp .seqtitle-title {
+    font-size: 1em;
+    margin: 0.5em 0 0;
+	background: linear-gradient(to right, rgba(22,119,255,0.02), rgba(5,212,205,0.05), rgba(22,119,255,0.02));
+    font-weight: bold;
+	line-height: 1.6;
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
     .note-to-mp {
