@@ -726,3 +726,13 @@
     border-radius: 0 20px 20px 0;
     font-family: 'Titillium Web', sans-serif;
 }
+
+/* 覆盖默认行号显示 */
+.note-to-mp section.code-section ul {
+    display: none;
+}
+
+/* 行号隐藏后，代码区需要占满宽度 */
+.note-to-mp section.code-section pre {
+    padding-left: 1.2em;
+}

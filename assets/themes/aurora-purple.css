@@ -690,3 +690,13 @@
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(168, 85, 247, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06), inset 2px 0 0 0 #a855f7, inset 1px 0 0 0 #f472b6;
 }
+
+/* 覆盖默认行号显示 */
+.note-to-mp section.code-section ul {
+    display: none;
+}
+
+/* 行号隐藏后，代码区需要占满宽度 */
+.note-to-mp section.code-section pre {
+    padding-left: 1.2em;
+}
