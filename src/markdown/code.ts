@@ -67,6 +67,7 @@ export class CardDataManager {
 	}
 }
 
+
 const MermaidSectionClassName = 'note-mermaid';
 const MermaidImgClassName = 'note-mermaid-img';
 
@@ -155,37 +156,23 @@ export class CodeRenderer extends Extension {
 
 		code = this.replaceSpaces(code);
 		const lines = code.split('\n');
-		let body = '';
 		let liItems = '';
-		for (let line in lines) {
-			let text = lines[line];
-			if (text.length === 0) {
-				text = '<br>'
-			}
-			body = body + '<code>' + text + '</code>';
-			liItems = liItems + `<li>${parseInt(line)+1}</li>`;
+		for (let index = 0; index < lines.length; index++) {
+			liItems += `<li>${index + 1}</li>`;
 		}
 
-		let codeSection = '<section class="code-section code-snippet__fix hljs">';
+		let codeSection = '<section class="code-section code-snippet__fix">';
 		if (this.settings.lineNumber) {
-			codeSection = codeSection + '<ul>'
-				+ liItems
-				+ '</ul>';
+			codeSection += '<ul>' + liItems + '</ul>';
 		}
 
-		let html = '';
+		const classes = ['hljs'];
 		if (lang) {
-		html = codeSection + '<pre style="max-width:1000% !important;" class="hljs language-'
-			+ lang
-			+ '">'
-			+ body
-			+ '</pre></section>';
+			classes.push(`language-${lang}`);
 		}
-		else {
-			html = codeSection + '<pre>'
-				+ body
-				+ '</pre></section>';
-		}
+		const codeElement = '<code class="' + classes.join(' ') + '">' + lines.join('\n') + '</code>';
+		const preElement = '<pre style="max-width:1000% !important;">' + codeElement + '</pre>';
+		const html = codeSection + preElement + '</section>';
 
 		if (!this.settings.isAuthKeyVaild()) {
 			return html;
@@ -285,4 +272,3 @@ export class CodeRenderer extends Extension {
 		}
 	}
 }
-
