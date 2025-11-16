@@ -424,16 +424,24 @@ export default class AssetsManager {
         if (!relativePath.includes('/')) {
             return relativePath;
         }
-        const stack = basePath.split("/");
+
+        // 初始化路径栈：如果basePath为空则使用空数组，否则使用basePath的目录结构
+        // 注意：getActiveFileDir()已经返回了当前文件所在的目录，不需要再pop()
+        const stack = basePath ? basePath.split("/") : [];
         const parts = relativePath.split("/");
-      
-        stack.pop(); // Remove the current file name (or empty string)
-    
+
         for (const part of parts) {
+            if (!part) continue; // 跳过空字符串
             if (part === ".") continue;
-            if (part === "..") stack.pop();
-            else stack.push(part);
+            if (part === "..") {
+                if (stack.length > 0) {
+                    stack.pop();
+                }
+            } else {
+                stack.push(part);
+            }
         }
+
         return stack.join("/");
     }
 
