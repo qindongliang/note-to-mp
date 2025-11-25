@@ -46,5 +46,11 @@
         "className": "aurora-purple",
         "desc": "极光紫韵主题，粉紫蓝三色渐变，现代玻璃态效果，径向渐变背景",
         "author": "Sun Booshi"
+    },
+    {
+        "name": "文案薄荷",
+        "className": "copywriting-mint",
+        "desc": "提取自《别再用AI写文案了》的薄荷绿渐变主题，卡片化排版和柔和阴影",
+        "author": "AI Assistant"
     }
 ]
