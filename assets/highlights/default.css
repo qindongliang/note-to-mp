@@ -31,8 +31,8 @@ code.hljs {
 }
 /* end baseline CSS */
 .hljs {
-  background: #F3F3F3;
-  color: #444
+  background: #F3F3F3 !important;
+  color: #444 !important
 }
 /* Base color: saturation 0; */
 .hljs-subst {
@@ -47,15 +47,15 @@ code.hljs {
   
 }
 .hljs-comment {
-  color: #697070
+  color: #697070 !important
 }
 .hljs-tag,
 .hljs-punctuation {
-  color: #444a
+  color: #444a !important
 }
 .hljs-tag .hljs-name,
 .hljs-tag .hljs-attr {
-  color: #444
+  color: #444 !important
 }
 .hljs-keyword,
 .hljs-attribute,
@@ -74,11 +74,11 @@ code.hljs {
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-  color: #880000
+  color: #880000 !important
 }
 .hljs-title,
 .hljs-section {
-  color: #880000;
+  color: #880000 !important;
   font-weight: bold
 }
 .hljs-regexp,
@@ -89,24 +89,24 @@ code.hljs {
 .hljs-selector-attr,
 .hljs-operator,
 .hljs-selector-pseudo {
-  color: #ab5656
+  color: #ab5656 !important
 }
-/* Language color: hue: 90; */
+/* Language color: hue !important: 90; */
 .hljs-literal {
-  color: #695
+  color: #695 !important
 }
 .hljs-built_in,
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-  color: #397300
+  color: #397300 !important
 }
-/* Meta color: hue: 200 */
+/* Meta color: hue !important: 200 */
 .hljs-meta {
-  color: #1f7199
+  color: #1f7199 !important
 }
 .hljs-meta .hljs-string {
-  color: #38a
+  color: #38a !important
 }
 /* Misc effects */
 .hljs-emphasis {

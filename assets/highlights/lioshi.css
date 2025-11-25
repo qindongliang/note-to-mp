@@ -9,16 +9,16 @@ code.hljs {
 /* lioshi Theme */
 /* Original theme - https://github.com/lioshi/vscode-lioshi-theme */
 .hljs {
-  background: #303030;
-  color: #c5c8c6
+  background: #303030 !important;
+  color: #c5c8c6 !important
 }
 /* Comment */
 .hljs-comment {
-  color: #8d8d8d
+  color: #8d8d8d !important
 }
 /* quote */
 .hljs-quote {
-  color: #b3c7d8
+  color: #b3c7d8 !important
 }
 /* Red */
 .hljs-variable,
@@ -29,7 +29,7 @@ code.hljs {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
-  color: #cc6666
+  color: #cc6666 !important
 }
 /* Orange */
 .hljs-number,
@@ -38,35 +38,35 @@ code.hljs {
 .hljs-type,
 .hljs-subst
 .hljs-link {
-  color: #de935f
+  color: #de935f !important
 }
 /* Yellow */
 .hljs-attribute {
-  color: #f0c674
+  color: #f0c674 !important
 }
 /* Green */
 .hljs-string,
 .hljs-bullet,
 .hljs-params,
 .hljs-addition {
-  color: #b5bd68
+  color: #b5bd68 !important
 }
 /* Purple */
 .hljs-selector-tag,
 .hljs-keyword,
 .hljs-function,
 .hljs-class {
-  color: #be94bb
+  color: #be94bb !important
 }
 /* Blue */
 .hljs-title,
 .hljs-meta,
 .hljs-section {
-  color: #81a2be
+  color: #81a2be !important
 }
 /* Purple light */
 .hljs-symbol {
-  color: #dbc4d9
+  color: #dbc4d9 !important
 }
 .hljs-emphasis {
   font-style: italic

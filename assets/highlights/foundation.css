@@ -14,14 +14,14 @@ Version: 1.0
 Date: 2013-04-02
 */
 .hljs {
-  background: #eee;
-  color: black
+  background: #eee !important;
+  color: black !important
 }
 .hljs-link,
 .hljs-emphasis,
 .hljs-attribute,
 .hljs-addition {
-  color: #070
+  color: #070 !important
 }
 .hljs-emphasis {
   font-style: italic
@@ -29,52 +29,52 @@ Date: 2013-04-02
 .hljs-strong,
 .hljs-string,
 .hljs-deletion {
-  color: #d14
+  color: #d14 !important
 }
 .hljs-strong {
   font-weight: bold
 }
 .hljs-quote,
 .hljs-comment {
-  color: #998;
+  color: #998 !important;
   font-style: italic
 }
 .hljs-section,
 .hljs-title {
-  color: #900
+  color: #900 !important
 }
 .hljs-class .hljs-title,
 .hljs-title.class_,
 .hljs-type {
-  color: #458
+  color: #458 !important
 }
 .hljs-variable,
 .hljs-template-variable {
-  color: #336699
+  color: #336699 !important
 }
 .hljs-bullet {
-  color: #997700
+  color: #997700 !important
 }
 .hljs-meta {
-  color: #3344bb
+  color: #3344bb !important
 }
 .hljs-code,
 .hljs-number,
 .hljs-literal,
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #099
+  color: #099 !important
 }
 .hljs-regexp {
-  background-color: #fff0ff;
-  color: #880088
+  background-color: #fff0ff !important;
+  color: #880088 !important
 }
 .hljs-symbol {
-  color: #990073
+  color: #990073 !important
 }
 .hljs-tag,
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #007700
+  color: #007700 !important
 }

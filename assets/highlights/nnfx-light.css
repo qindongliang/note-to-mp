@@ -17,24 +17,24 @@ code.hljs {
   @version 1.1.0
 */
 .hljs {
-  background: #fff;
-  color: #000
+  background: #fff !important;
+  color: #000 !important
 }
 .language-xml .hljs-meta,
 .language-xml .hljs-meta-string {
   font-weight: bold;
   font-style: italic;
-  color: #48b
+  color: #48b !important
 }
 .hljs-comment,
 .hljs-quote {
   font-style: italic;
-  color: #070
+  color: #070 !important
 }
 .hljs-name,
 .hljs-keyword,
 .hljs-built_in {
-  color: #808
+  color: #808 !important
 }
 .hljs-name,
 .hljs-attr {
@@ -49,40 +49,40 @@ code.hljs {
 .hljs-number,
 .hljs-regexp,
 .hljs-link {
-  color: #00f
+  color: #00f !important
 }
 .hljs-title,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-variable,
 .hljs-template-variable {
-  color: #f40
+  color: #f40 !important
 }
 .hljs-title.class_,
 .hljs-class .hljs-title,
 .hljs-type {
   font-weight: bold;
-  color: #639
+  color: #639 !important
 }
 .hljs-title.function_,
 .hljs-function .hljs-title,
 .hljs-attr,
 .hljs-subst,
 .hljs-tag {
-  color: #000
+  color: #000 !important
 }
 .hljs-formula {
-  background-color: #eee;
+  background-color: #eee !important;
   font-style: italic
 }
 .hljs-addition {
-  background-color: #beb
+  background-color: #beb !important
 }
 .hljs-deletion {
-  background-color: #fbb
+  background-color: #fbb !important
 }
 .hljs-meta {
-  color: #269
+  color: #269 !important
 }
 .hljs-section,
 .hljs-selector-id,
@@ -90,7 +90,7 @@ code.hljs {
 .hljs-selector-pseudo,
 .hljs-selector-tag {
   font-weight: bold;
-  color: #48b
+  color: #48b !important
 }
 .hljs-selector-pseudo {
   font-style: italic

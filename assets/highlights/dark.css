@@ -12,15 +12,15 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 
 */
 .hljs {
-  color: #ddd;
-  background: #303030
+  color: #ddd !important;
+  background: #303030 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal,
 .hljs-section,
 .hljs-link {
-  color: white
+  color: white !important
 }
 .hljs-subst {
   /* default */
@@ -38,13 +38,13 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #d88
+  color: #d88 !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-  color: #979797
+  color: #979797 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,

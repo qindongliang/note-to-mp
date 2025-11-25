@@ -12,24 +12,24 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 .hljs {
-  color: #000;
-  background: #fff
+  color: #000 !important;
+  background: #fff !important
 }
 .hljs-subst,
 .hljs-title {
   font-weight: normal;
-  color: #000
+  color: #000 !important
 }
 .hljs-comment,
 .hljs-quote {
-  color: #808080;
+  color: #808080 !important;
   font-style: italic
 }
 .hljs-meta {
-  color: #808000
+  color: #808000 !important
 }
 .hljs-tag {
-  background: #efefef
+  background: #efefef !important
 }
 .hljs-section,
 .hljs-name,
@@ -40,14 +40,14 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-selector-id,
 .hljs-selector-class {
   font-weight: bold;
-  color: #000080
+  color: #000080 !important
 }
 .hljs-attribute,
 .hljs-number,
 .hljs-regexp,
 .hljs-link {
   font-weight: bold;
-  color: #0000ff
+  color: #0000ff !important
 }
 .hljs-number,
 .hljs-regexp,
@@ -55,14 +55,14 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
   font-weight: normal
 }
 .hljs-string {
-  color: #008000;
+  color: #008000 !important;
   font-weight: bold
 }
 .hljs-symbol,
 .hljs-bullet,
 .hljs-formula {
-  color: #000;
-  background: #d0eded;
+  color: #000 !important;
+  background: #d0eded !important;
   font-style: italic
 }
 .hljs-doctag {
@@ -70,13 +70,13 @@ Intellij Idea-like styling (c) Vasily Polovnyov <vast@whiteants.net>
 }
 .hljs-variable,
 .hljs-template-variable {
-  color: #660e7a
+  color: #660e7a !important
 }
 .hljs-addition {
-  background: #baeeba
+  background: #baeeba !important
 }
 .hljs-deletion {
-  background: #ffc8bd
+  background: #ffc8bd !important
 }
 .hljs-emphasis {
   font-style: italic

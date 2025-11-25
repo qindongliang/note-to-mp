@@ -13,14 +13,14 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 */
 .hljs {
   background: white;
-  color: black
+  color: black !important
 }
 /* Base color: saturation 0; */
 .hljs-subst {
-  color: black
+  color: black !important
 }
 .hljs-comment {
-  color: #555555;
+  color: #555555 !important;
   font-style: italic
 }
 .hljs-keyword,
@@ -29,12 +29,12 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-meta .hljs-keyword,
 .hljs-doctag,
 .hljs-name {
-  color: #000000;
+  color: #000000 !important;
   font-weight: bold
 }
-/* User color: hue: 0 */
+/* User color: hue !important: 0 */
 .hljs-string {
-  color: #000080
+  color: #000080 !important
 }
 .hljs-type,
 .hljs-number,
@@ -43,7 +43,7 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-quote,
 .hljs-template-tag,
 .hljs-deletion {
-  color: #000000
+  color: #000000 !important
 }
 .hljs-regexp,
 .hljs-symbol,
@@ -52,37 +52,37 @@ ISBL Editor style light color schemec (c) Dmitriy Tarasov <dimatar@gmail.com>
 .hljs-link,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: #5e1700
+  color: #5e1700 !important
 }
-/* Language color: hue: 90; */
+/* Language color: hue !important: 90; */
 .hljs-built_in,
 .hljs-literal {
-  color: #000080;
+  color: #000080 !important;
   font-weight: bold
 }
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-  color: #397300
+  color: #397300 !important
 }
 .hljs-class {
-  color: #6f1C00;
+  color: #6f1C00 !important;
   font-weight: bold
 }
 .hljs-title,
 .hljs-section {
-  color: #fb2c00
+  color: #fb2c00 !important
 }
 .hljs-title>.hljs-built_in {
-  color: #008080;
+  color: #008080 !important;
   font-weight: normal
 }
-/* Meta color: hue: 200 */
+/* Meta color: hue !important: 200 */
 .hljs-meta {
-  color: #1f7199
+  color: #1f7199 !important
 }
 .hljs-meta .hljs-string {
-  color: #4d99bf
+  color: #4d99bf !important
 }
 /* Misc effects */
 .hljs-emphasis {

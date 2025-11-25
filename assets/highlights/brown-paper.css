@@ -12,13 +12,13 @@ Brown Paper style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 
 */
 .hljs {
-  color: #363c69;
-  background: #b7a68e url(./brown-papersq.png)
+  color: #363c69 !important;
+  background: #b7a68e !important url(./brown-papersq.png)
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #005599;
+  color: #005599 !important;
   font-weight: bold
 }
 .hljs-subst {
@@ -39,13 +39,13 @@ Brown Paper style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 .hljs-template-variable,
 .hljs-link,
 .hljs-name {
-  color: #2c009f
+  color: #2c009f !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-meta,
 .hljs-deletion {
-  color: #802022
+  color: #802022 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,

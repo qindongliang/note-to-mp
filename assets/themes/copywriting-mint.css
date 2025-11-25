@@ -209,7 +209,6 @@
 .note-to-mp section.code-section {
     display: flex;
     align-items: flex-start;
-    background-color: #ffffff; /* 代码块容器保持中性，避免薄荷底色干扰 */
     border-radius: 10px;
     border-top: 3px solid #2bae85;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -223,7 +222,6 @@
     list-style: none;
     padding: 1.1em 0.5em;
     margin: 0;
-    background-color: #e8f4ee;
     color: #6b8c7c;
     font-size: 13px;
     line-height: 1.5;

@@ -13,13 +13,13 @@ code.hljs {
     URL:      https://github.com/idleberg/Kimbie-highlight.js
 */
 .hljs {
-  background: #221a0f;
-  color: #d3af86
+  background: #221a0f !important;
+  color: #d3af86 !important
 }
 /* Kimbie Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #d6baad
+  color: #d6baad !important
 }
 /* Kimbie Red */
 .hljs-variable,
@@ -30,7 +30,7 @@ code.hljs {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-meta {
-  color: #dc3958
+  color: #dc3958 !important
 }
 /* Kimbie Orange */
 .hljs-number,
@@ -40,26 +40,26 @@ code.hljs {
 .hljs-params,
 .hljs-deletion,
 .hljs-link {
-  color: #f79a32
+  color: #f79a32 !important
 }
 /* Kimbie Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #889b4a
+  color: #889b4a !important
 }
 /* Kimbie Purple */
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-function {
-  color: #98676a
+  color: #98676a !important
 }
 /* Kimbie Yellow */
 .hljs-title,
 .hljs-section,
 .hljs-attribute {
-  color: #f06431
+  color: #f06431 !important
 }
 .hljs-emphasis {
   font-style: italic

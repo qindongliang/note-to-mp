@@ -13,7 +13,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 */
 .hljs {
   background: white;
-  color: black
+  color: black !important
 }
 .hljs-string,
 .hljs-variable,
@@ -24,13 +24,13 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 .hljs-addition,
 .hljs-attribute,
 .hljs-link {
-  color: #888
+  color: #888 !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-meta,
 .hljs-deletion {
-  color: #ccc
+  color: #ccc !important
 }
 .hljs-keyword,
 .hljs-selector-tag,

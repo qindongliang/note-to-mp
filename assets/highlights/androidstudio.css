@@ -11,46 +11,46 @@ Date: 24 Fev 2015
 Author: Pedro Oliveira <kanytu@gmail . com>
 */
 .hljs {
-  color: #a9b7c6;
-  background: #282b2e
+  color: #a9b7c6 !important;
+  background: #282b2e !important
 }
 .hljs-number,
 .hljs-literal,
 .hljs-symbol,
 .hljs-bullet {
-  color: #6897BB
+  color: #6897BB !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-deletion {
-  color: #cc7832
+  color: #cc7832 !important
 }
 .hljs-variable,
 .hljs-template-variable,
 .hljs-link {
-  color: #629755
+  color: #629755 !important
 }
 .hljs-comment,
 .hljs-quote {
-  color: #808080
+  color: #808080 !important
 }
 .hljs-meta {
-  color: #bbb529
+  color: #bbb529 !important
 }
 .hljs-string,
 .hljs-attribute,
 .hljs-addition {
-  color: #6A8759
+  color: #6A8759 !important
 }
 .hljs-section,
 .hljs-title,
 .hljs-type {
-  color: #ffc66d
+  color: #ffc66d !important
 }
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #e8bf6a
+  color: #e8bf6a !important
 }
 .hljs-emphasis {
   font-style: italic

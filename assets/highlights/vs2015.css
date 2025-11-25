@@ -11,65 +11,65 @@ code.hljs {
  * Author: Nicolas LLOBERA <nllobera@gmail.com>
  */
 .hljs {
-  background: #1E1E1E;
-  color: #DCDCDC
+  background: #1E1E1E !important;
+  color: #DCDCDC !important
 }
 .hljs-keyword,
 .hljs-literal,
 .hljs-symbol,
 .hljs-name {
-  color: #569CD6
+  color: #569CD6 !important
 }
 .hljs-link {
-  color: #569CD6;
+  color: #569CD6 !important;
   text-decoration: underline
 }
 .hljs-built_in,
 .hljs-type {
-  color: #4EC9B0
+  color: #4EC9B0 !important
 }
 .hljs-number,
 .hljs-class {
-  color: #B8D7A3
+  color: #B8D7A3 !important
 }
 .hljs-string,
 .hljs-meta .hljs-string {
-  color: #D69D85
+  color: #D69D85 !important
 }
 .hljs-regexp,
 .hljs-template-tag {
-  color: #9A5334
+  color: #9A5334 !important
 }
 .hljs-subst,
 .hljs-function,
 .hljs-title,
 .hljs-params,
 .hljs-formula {
-  color: #DCDCDC
+  color: #DCDCDC !important
 }
 .hljs-comment,
 .hljs-quote {
-  color: #57A64A;
+  color: #57A64A !important;
   font-style: italic
 }
 .hljs-doctag {
-  color: #608B4E
+  color: #608B4E !important
 }
 .hljs-meta,
 .hljs-meta .hljs-keyword,
 .hljs-tag {
-  color: #9B9B9B
+  color: #9B9B9B !important
 }
 .hljs-variable,
 .hljs-template-variable {
-  color: #BD63C5
+  color: #BD63C5 !important
 }
 .hljs-attr,
 .hljs-attribute {
-  color: #9CDCFE
+  color: #9CDCFE !important
 }
 .hljs-section {
-  color: gold
+  color: gold !important
 }
 .hljs-emphasis {
   font-style: italic
@@ -86,15 +86,15 @@ code.hljs {
 .hljs-selector-class,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: #D7BA7D
+  color: #D7BA7D !important
 }
 .hljs-addition {
-  background-color: #144212;
+  background-color: #144212 !important;
   display: inline-block;
   width: 100%
 }
 .hljs-deletion {
-  background-color: #600;
+  background-color: #600 !important;
   display: inline-block;
   width: 100%
 }

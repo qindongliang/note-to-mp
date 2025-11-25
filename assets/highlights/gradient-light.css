@@ -12,18 +12,18 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 
 */
 .hljs {
-  background-color: #f9ccff;
+  background-color: #f9ccff !important;
   background-image: linear-gradient(295deg, #f9ccff 0%, #e6bbf9 11%, #9ec6f9 32%, #55e6ee 60%, #91f5d1 74%, #f9ffbf 98%);
-  color: #250482
+  color: #250482 !important
 }
 .hljs-subtr {
-  color: #01958B
+  color: #01958B !important
 }
 .hljs-doctag,
 .hljs-meta,
 .hljs-comment,
 .hljs-quote {
-  color: #CB7200
+  color: #CB7200 !important
 }
 .hljs-selector-tag,
 .hljs-selector-id,
@@ -31,35 +31,35 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-regexp,
 .hljs-attr,
 .hljs-tag {
-  color: #07BD5F
+  color: #07BD5F !important
 }
 .hljs-params,
 .hljs-selector-class,
 .hljs-bullet {
-  color: #43449F
+  color: #43449F !important
 }
 .hljs-keyword,
 .hljs-section,
 .hljs-meta .hljs-keyword,
 .hljs-symbol,
 .hljs-type {
-  color: #7D2801
+  color: #7D2801 !important
 }
 .hljs-addition,
 .hljs-number,
 .hljs-link {
-  color: #7F0096
+  color: #7F0096 !important
 }
 .hljs-string {
-  color: #2681ab
+  color: #2681ab !important
 }
 .hljs-attribute,
 .hljs-addition {
-  color: #296562
+  color: #296562 !important
 }
 .hljs-variable,
 .hljs-template-variable {
-  color: #025C8F
+  color: #025C8F !important
 }
 .hljs-built_in,
 .hljs-formula,
@@ -67,12 +67,12 @@ Gradient Light (c) Samia Ali <samiaab1990@gmail.com>
 .hljs-title,
 .hljs-class,
 .hljs-function {
-  color: #529117
+  color: #529117 !important
 }
 .hljs-selector-pseudo,
 .hljs-deletion,
 .hljs-literal {
-  color: #AD13FF
+  color: #AD13FF !important
 }
 .hljs-emphasis,
 .hljs-quote {

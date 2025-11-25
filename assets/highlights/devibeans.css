@@ -14,33 +14,33 @@ code.hljs {
     Inspired by vim's jellybeans theme (https://github.com/nanotech/jellybeans.vim)
 */
 .hljs {
-  background: #000000;
-  color: #a39e9b
+  background: #000000 !important;
+  color: #a39e9b !important
 }
 .hljs-attr,
 .hljs-template-tag {
-  color: #8787d7
+  color: #8787d7 !important
 }
 .hljs-comment,
 .hljs-doctag,
 .hljs-quote {
-  color: #339966
+  color: #339966 !important
 }
 .hljs-params {
-  color: #a39e9b
+  color: #a39e9b !important
 }
 .hljs-regexp {
-  color: #d700ff
+  color: #d700ff !important
 }
 .hljs-tag,
 .hljs-selector-id,
 .hljs-number,
 .hljs-literal {
-  color: #ef5350
+  color: #ef5350 !important
 }
 .hljs-meta,
 .hljs-meta .hljs-keyword {
-  color: #0087ff
+  color: #0087ff !important
 }
 /* opt-out */
 .hljs-operator,
@@ -56,12 +56,12 @@ code.hljs {
 .hljs-selector-pseudo,
 .hljs-link,
 .hljs-keyword {
-  color: #64b5f6
+  color: #64b5f6 !important
 }
 .hljs-built_in,
 .hljs-title,
 .hljs-deletion {
-  color: #ff8700
+  color: #ff8700 !important
 }
 .hljs-type,
 .hljs-section,
@@ -69,7 +69,7 @@ code.hljs {
 .hljs-name,
 .hljs-property,
 .hljs-attribute {
-  color: #ffd75f
+  color: #ffd75f !important
 }
 .hljs-meta .hljs-string,
 .hljs-string,
@@ -77,10 +77,10 @@ code.hljs {
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #558b2f
+  color: #558b2f !important
 }
 .hljs-selector-tag {
-  color: #9966ff
+  color: #9966ff !important
 }
 .hljs-emphasis {
   font-style: italic

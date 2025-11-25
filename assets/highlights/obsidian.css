@@ -11,27 +11,27 @@ code.hljs {
  * ported by Alexander Marenin (http://github.com/ioncreature)
  */
 .hljs {
-  color: #e0e2e4;
-  background: #282b2e
+  color: #e0e2e4 !important;
+  background: #282b2e !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal,
 .hljs-selector-id {
-  color: #93c763
+  color: #93c763 !important
 }
 .hljs-number {
-  color: #ffcd22
+  color: #ffcd22 !important
 }
 .hljs-attribute {
-  color: #668bb0
+  color: #668bb0 !important
 }
 .hljs-regexp,
 .hljs-link {
-  color: #d39745
+  color: #d39745 !important
 }
 .hljs-meta {
-  color: #557182
+  color: #557182 !important
 }
 .hljs-tag,
 .hljs-name,
@@ -46,19 +46,19 @@ code.hljs {
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #8cbbad
+  color: #8cbbad !important
 }
 .hljs-string,
 .hljs-symbol {
-  color: #ec7600
+  color: #ec7600 !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion {
-  color: #818e96
+  color: #818e96 !important
 }
 .hljs-selector-class {
-  color: #A082BD
+  color: #A082BD !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -75,5 +75,5 @@ code.hljs {
 .hljs-title.class_,
 .hljs-class .hljs-title,
 .hljs-section {
-  color: white
+  color: white !important
 }

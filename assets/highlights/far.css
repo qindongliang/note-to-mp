@@ -12,8 +12,8 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 
 */
 .hljs {
-  color: #0ff;
-  background: #000080
+  color: #0ff !important;
+  background: #000080 !important
 }
 .hljs-subst {
   /* default */
@@ -27,7 +27,7 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-addition {
-  color: #ff0
+  color: #ff0 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -37,22 +37,22 @@ FAR Style (c) MajestiC <majestic2k@gmail.com>
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-variable {
-  color: #fff
+  color: #fff !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-doctag,
 .hljs-deletion {
-  color: #888
+  color: #888 !important
 }
 .hljs-number,
 .hljs-regexp,
 .hljs-literal,
 .hljs-link {
-  color: #0f0
+  color: #0f0 !important
 }
 .hljs-meta {
-  color: #008080
+  color: #008080 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,

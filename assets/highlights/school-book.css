@@ -12,17 +12,17 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 
 */
 .hljs {
-  color: #3e5915;
-  background: #f6f5b2
+  color: #3e5915 !important;
+  background: #f6f5b2 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal {
-  color: #005599;
+  color: #005599 !important;
   font-weight: bold
 }
 .hljs-subst {
-  color: #3e5915
+  color: #3e5915 !important
 }
 .hljs-string,
 .hljs-title,
@@ -37,13 +37,13 @@ School Book style from goldblog.com.ua (c) Zaripov Yura <yur4ik7@ukr.net>
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-link {
-  color: #2c009f
+  color: #2c009f !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-  color: #e60415
+  color: #e60415 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,

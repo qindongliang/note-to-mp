@@ -15,26 +15,26 @@ Website: https://srcery-colors.github.io/
 Date: 2021-04-13
 */
 .hljs {
-  background: #1C1B19;
+  background: #1C1B19 !important;
   /* Black */
-  color: #FCE8C3/* Bright White */
+  color: #FCE8C3 !important/* Bright White */
   
 }
 /* Bright White */
 .hljs-subst,
 .hljs-quote,
 .hljs-literal {
-  color: #FCE8C3
+  color: #FCE8C3 !important
 }
 /* Bright Blue */
 .hljs-type,
 .hljs-symbol {
-  color: #68A8E4
+  color: #68A8E4 !important
 }
 /* Red */
 .hljs-keyword,
 .hljs-deletion {
-  color: #EF2F27
+  color: #EF2F27 !important
 }
 /* Yellow */
 .hljs-name,
@@ -46,7 +46,7 @@ Date: 2021-04-13
 .hljs-selector-pseudo,
 .hljs-section,
 .hljs-title {
-  color: #FBB829
+  color: #FBB829 !important
 }
 /* Cyan */
 .hljs-code,
@@ -54,31 +54,31 @@ Date: 2021-04-13
 .hljs-property,
 .hljs-template-variable,
 .hljs-class {
-  color: #0AAEB3
+  color: #0AAEB3 !important
 }
 /* Bright Green */
 .hljs-string,
 .hljs-regexp,
 .hljs-bullet,
 .hljs-addition {
-  color: #98BC37
+  color: #98BC37 !important
 }
 /* Bright Magenta */
 .hljs-built_in,
 .hljs-params {
-  color: #FF5C8F
+  color: #FF5C8F !important
 }
 /* Blue */
 .hljs-template-tag,
 .hljs-selector-tag {
-  color: #2C78BF
+  color: #2C78BF !important
 }
 /* Bright Black */
 .hljs-link,
 .hljs-number,
 .hljs-comment,
 .hljs-meta {
-  color: #918175
+  color: #918175 !important
 }
 .hljs-emphasis {
   font-style: italic

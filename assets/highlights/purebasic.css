@@ -29,7 +29,7 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 			http://chir.ag/projects/name-that-color
 */
 .hljs {
-  background: #FFFFDF/* Half and Half (approx.) */
+  background: #FFFFDF !important/* Half and Half (approx.) */
   
 }
 /* --- used for PureBASIC base color --- */
@@ -43,7 +43,7 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 .hljs-attr,
 .hljs-params,
 .hljs-subst {
-  color: #000000/* Black */
+  color: #000000 !important/* Black */
   
 }
 /* --- used for PureBASIC Comments --- */
@@ -52,7 +52,7 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 .hljs-section,
 .hljs-selector-pseudo,
 .hljs-addition {
-  color: #00AAAA/* Persian Green (approx.) */
+  color: #00AAAA !important/* Persian Green (approx.) */
   
 }
 /* --- used for PureBASIC Keywords --- */
@@ -61,7 +61,7 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 .hljs-meta .hljs-keyword,
 .hljs-selector-class,
 .hljs-built_in {
-  color: #006666;
+  color: #006666 !important;
   /* Blue Stone (approx.) */
   font-weight: bold
 }
@@ -70,13 +70,13 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 .hljs-tag,
 .hljs-variable,
 .hljs-code {
-  color: #006666/* Blue Stone (approx.) */
+  color: #006666 !important/* Blue Stone (approx.) */
   
 }
 /* --- used for PureBASIC Strings --- */
 .hljs-string,
 .hljs-selector-attr {
-  color: #0080FF/* Azure Radiance (approx.) */
+  color: #0080FF !important/* Azure Radiance (approx.) */
   
 }
 /* --- used for PureBASIC Constants --- */
@@ -84,13 +84,13 @@ NOTE_2:	Color names provided in comments were derived using "Name that Color" on
 .hljs-link,
 .hljs-deletion,
 .hljs-attribute {
-  color: #924B72/* Cannon Pink (approx.) */
+  color: #924B72 !important/* Cannon Pink (approx.) */
   
 }
 .hljs-meta,
 .hljs-literal,
 .hljs-selector-id {
-  color: #924B72;
+  color: #924B72 !important;
   /* Cannon Pink (approx.) */
   font-weight: bold
 }

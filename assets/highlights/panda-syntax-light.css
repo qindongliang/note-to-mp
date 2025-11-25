@@ -12,8 +12,8 @@ code.hljs {
  * Author: Annmarie Switzer <https://github.com/annmarie-switzer>
  */
 .hljs {
-  color: #2a2c2d;
-  background: #e6e6e6
+  color: #2a2c2d !important;
+  background: #e6e6e6 !important
 }
 .hljs-emphasis {
   font-style: italic
@@ -26,32 +26,32 @@ code.hljs {
 }
 .hljs-comment,
 .hljs-quote {
-  color: #676B79;
+  color: #676B79 !important;
   font-style: italic
 }
 .hljs-params {
-  color: #676B79
+  color: #676B79 !important
 }
 .hljs-punctuation,
 .hljs-attr {
-  color: #2a2c2d
+  color: #2a2c2d !important
 }
 .hljs-selector-tag,
 .hljs-name,
 .hljs-meta,
 .hljs-operator,
 .hljs-char.escape_ {
-  color: #c56200
+  color: #c56200 !important
 }
 .hljs-keyword,
 .hljs-deletion {
-  color: #d92792
+  color: #d92792 !important
 }
 .hljs-regexp,
 .hljs-selector-pseudo,
 .hljs-selector-attr,
 .hljs-variable.language_ {
-  color: #cc5e91
+  color: #cc5e91 !important
 }
 .hljs-subst,
 .hljs-property,
@@ -59,7 +59,7 @@ code.hljs {
 .hljs-formula,
 .hljs-section,
 .hljs-title.function_ {
-  color: #3787c7
+  color: #3787c7 !important
 }
 .hljs-string,
 .hljs-symbol,
@@ -69,7 +69,7 @@ code.hljs {
 .hljs-title.class_,
 .hljs-title.class_.inherited__,
 .hljs-meta .hljs-string {
-  color: #0d7d6c
+  color: #0d7d6c !important
 }
 .hljs-variable,
 .hljs-template-variable,
@@ -85,5 +85,5 @@ code.hljs {
 .hljs-attribute,
 .hljs-template-tag,
 .hljs-meta .hljs-keyword {
-  color: #7641bb
+  color: #7641bb !important
 }

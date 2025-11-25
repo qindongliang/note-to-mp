@@ -14,13 +14,13 @@ code.hljs {
   Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
 */
 .hljs {
-  background: #2b2b2b;
-  color: #f8f8f2
+  background: #2b2b2b !important;
+  color: #f8f8f2 !important
 }
 /* Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #d4d0ab
+  color: #d4d0ab !important
 }
 /* Red */
 .hljs-variable,
@@ -31,7 +31,7 @@ code.hljs {
 .hljs-selector-class,
 .hljs-regexp,
 .hljs-deletion {
-  color: #ffa07a
+  color: #ffa07a !important
 }
 /* Orange */
 .hljs-number,
@@ -41,28 +41,28 @@ code.hljs {
 .hljs-params,
 .hljs-meta,
 .hljs-link {
-  color: #f5ab35
+  color: #f5ab35 !important
 }
 /* Yellow */
 .hljs-attribute {
-  color: #ffd700
+  color: #ffd700 !important
 }
 /* Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
-  color: #abe338
+  color: #abe338 !important
 }
 /* Blue */
 .hljs-title,
 .hljs-section {
-  color: #00e0e0
+  color: #00e0e0 !important
 }
 /* Purple */
 .hljs-keyword,
 .hljs-selector-tag {
-  color: #dcc6e0
+  color: #dcc6e0 !important
 }
 .hljs-emphasis {
   font-style: italic
@@ -85,7 +85,7 @@ code.hljs {
   .hljs-symbol,
   .hljs-type,
   .hljs-quote {
-    color: highlight
+    color: highlight !important
   }
   .hljs-keyword,
   .hljs-selector-tag {

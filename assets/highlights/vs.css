@@ -13,19 +13,19 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 */
 .hljs {
   background: white;
-  color: black
+  color: black !important
 }
 .hljs-comment,
 .hljs-quote,
 .hljs-variable {
-  color: #008000
+  color: #008000 !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-built_in,
 .hljs-name,
 .hljs-tag {
-  color: #00f
+  color: #00f !important
 }
 .hljs-string,
 .hljs-title,
@@ -36,24 +36,24 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .hljs-template-variable,
 .hljs-type,
 .hljs-addition {
-  color: #a31515
+  color: #a31515 !important
 }
 .hljs-deletion,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-meta {
-  color: #2b91af
+  color: #2b91af !important
 }
 .hljs-doctag {
-  color: #808080
+  color: #808080 !important
 }
 .hljs-attr {
-  color: #f00
+  color: #f00 !important
 }
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link {
-  color: #00b0e8
+  color: #00b0e8 !important
 }
 .hljs-emphasis {
   font-style: italic

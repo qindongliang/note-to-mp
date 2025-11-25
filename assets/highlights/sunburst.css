@@ -12,34 +12,34 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
 
 */
 .hljs {
-  background: #000;
-  color: #f8f8f8
+  background: #000 !important;
+  color: #f8f8f8 !important
 }
 .hljs-comment,
 .hljs-quote {
-  color: #aeaeae;
+  color: #aeaeae !important;
   font-style: italic
 }
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-type {
-  color: #e28964
+  color: #e28964 !important
 }
 .hljs-string {
-  color: #65b042
+  color: #65b042 !important
 }
 .hljs-subst {
-  color: #daefa3
+  color: #daefa3 !important
 }
 .hljs-regexp,
 .hljs-link {
-  color: #e9c062
+  color: #e9c062 !important
 }
 .hljs-title,
 .hljs-section,
 .hljs-tag,
 .hljs-name {
-  color: #89bdff
+  color: #89bdff !important
 }
 .hljs-title.class_,
 .hljs-class .hljs-title,
@@ -49,37 +49,37 @@ Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-symbol,
 .hljs-bullet,
 .hljs-number {
-  color: #3387cc
+  color: #3387cc !important
 }
 .hljs-params,
 .hljs-variable,
 .hljs-template-variable {
-  color: #3e87e3
+  color: #3e87e3 !important
 }
 .hljs-attribute {
-  color: #cda869
+  color: #cda869 !important
 }
 .hljs-meta {
-  color: #8996a8
+  color: #8996a8 !important
 }
 .hljs-formula {
-  background-color: #0e2231;
-  color: #f8f8f8;
+  background-color: #0e2231 !important;
+  color: #f8f8f8 !important;
   font-style: italic
 }
 .hljs-addition {
-  background-color: #253b22;
-  color: #f8f8f8
+  background-color: #253b22 !important;
+  color: #f8f8f8 !important
 }
 .hljs-deletion {
-  background-color: #420e09;
-  color: #f8f8f8
+  background-color: #420e09 !important;
+  color: #f8f8f8 !important
 }
 .hljs-selector-class {
-  color: #9b703f
+  color: #9b703f !important
 }
 .hljs-selector-id {
-  color: #8b98ab
+  color: #8b98ab !important
 }
 .hljs-emphasis {
   font-style: italic

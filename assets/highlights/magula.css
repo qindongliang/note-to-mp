@@ -15,11 +15,11 @@ Date: 2009-01-03
 Music: Aphex Twin / Xtal
 */
 .hljs {
-  background-color: #f4f4f4;
-  color: black
+  background-color: #f4f4f4 !important;
+  color: black !important
 }
 .hljs-subst {
-  color: black
+  color: black !important
 }
 .hljs-string,
 .hljs-title,
@@ -30,22 +30,22 @@ Music: Aphex Twin / Xtal
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #050
+  color: #050 !important
 }
 .hljs-comment,
 .hljs-quote {
-  color: #777
+  color: #777 !important
 }
 .hljs-number,
 .hljs-regexp,
 .hljs-literal,
 .hljs-type,
 .hljs-link {
-  color: #800
+  color: #800 !important
 }
 .hljs-deletion,
 .hljs-meta {
-  color: #00e
+  color: #00e !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -56,7 +56,7 @@ Music: Aphex Twin / Xtal
 .hljs-tag,
 .hljs-name {
   font-weight: bold;
-  color: navy
+  color: navy !important
 }
 .hljs-emphasis {
   font-style: italic

@@ -10,8 +10,8 @@ code.hljs {
   Five-color theme from a single blue hue.
 */
 .hljs {
-  background: #eaeef3;
-  color: #00193a
+  background: #eaeef3 !important;
+  color: #00193a !important
 }
 .hljs-keyword,
 .hljs-selector-tag,
@@ -23,7 +23,7 @@ code.hljs {
   font-weight: bold
 }
 .hljs-comment {
-  color: #738191
+  color: #738191 !important
 }
 .hljs-string,
 .hljs-title,
@@ -37,7 +37,7 @@ code.hljs {
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #0048ab
+  color: #0048ab !important
 }
 .hljs-meta,
 .hljs-subst,
@@ -49,7 +49,7 @@ code.hljs {
 .hljs-template-variable,
 .hljs-link,
 .hljs-bullet {
-  color: #4c81c9
+  color: #4c81c9 !important
 }
 .hljs-emphasis {
   font-style: italic

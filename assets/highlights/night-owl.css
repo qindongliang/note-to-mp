@@ -35,140 +35,140 @@ SOFTWARE.
 
 */
 .hljs {
-  background: #011627;
-  color: #d6deeb
+  background: #011627 !important;
+  color: #d6deeb !important
 }
 /* General Purpose */
 .hljs-keyword {
-  color: #c792ea;
+  color: #c792ea !important;
   font-style: italic
 }
 .hljs-built_in {
-  color: #addb67;
+  color: #addb67 !important;
   font-style: italic
 }
 .hljs-type {
-  color: #82aaff
+  color: #82aaff !important
 }
 .hljs-literal {
-  color: #ff5874
+  color: #ff5874 !important
 }
 .hljs-number {
-  color: #F78C6C
+  color: #F78C6C !important
 }
 .hljs-regexp {
-  color: #5ca7e4
+  color: #5ca7e4 !important
 }
 .hljs-string {
-  color: #ecc48d
+  color: #ecc48d !important
 }
 .hljs-subst {
-  color: #d3423e
+  color: #d3423e !important
 }
 .hljs-symbol {
-  color: #82aaff
+  color: #82aaff !important
 }
 .hljs-class {
-  color: #ffcb8b
+  color: #ffcb8b !important
 }
 .hljs-function {
-  color: #82AAFF
+  color: #82AAFF !important
 }
 .hljs-title {
-  color: #DCDCAA;
+  color: #DCDCAA !important;
   font-style: italic
 }
 .hljs-params {
-  color: #7fdbca
+  color: #7fdbca !important
 }
 /* Meta */
 .hljs-comment {
-  color: #637777;
+  color: #637777 !important;
   font-style: italic
 }
 .hljs-doctag {
-  color: #7fdbca
+  color: #7fdbca !important
 }
 .hljs-meta {
-  color: #82aaff
+  color: #82aaff !important
 }
 .hljs-meta .hljs-keyword {
-  color: #82aaff
+  color: #82aaff !important
 }
 .hljs-meta .hljs-string {
-  color: #ecc48d
+  color: #ecc48d !important
 }
 /* Tags, attributes, config */
 .hljs-section {
-  color: #82b1ff
+  color: #82b1ff !important
 }
 .hljs-tag,
 .hljs-name {
-  color: #7fdbca
+  color: #7fdbca !important
 }
 .hljs-attr {
-  color: #7fdbca
+  color: #7fdbca !important
 }
 .hljs-attribute {
-  color: #80cbc4
+  color: #80cbc4 !important
 }
 .hljs-variable {
-  color: #addb67
+  color: #addb67 !important
 }
 /* Markup */
 .hljs-bullet {
-  color: #d9f5dd
+  color: #d9f5dd !important
 }
 .hljs-code {
-  color: #80CBC4
+  color: #80CBC4 !important
 }
 .hljs-emphasis {
-  color: #c792ea;
+  color: #c792ea !important;
   font-style: italic
 }
 .hljs-strong {
-  color: #addb67;
+  color: #addb67 !important;
   font-weight: bold
 }
 .hljs-formula {
-  color: #c792ea
+  color: #c792ea !important
 }
 .hljs-link {
-  color: #ff869a
+  color: #ff869a !important
 }
 .hljs-quote {
-  color: #697098;
+  color: #697098 !important;
   font-style: italic
 }
 /* CSS */
 .hljs-selector-tag {
-  color: #ff6363
+  color: #ff6363 !important
 }
 .hljs-selector-id {
-  color: #fad430
+  color: #fad430 !important
 }
 .hljs-selector-class {
-  color: #addb67;
+  color: #addb67 !important;
   font-style: italic
 }
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: #c792ea;
+  color: #c792ea !important;
   font-style: italic
 }
 /* Templates */
 .hljs-template-tag {
-  color: #c792ea
+  color: #c792ea !important
 }
 .hljs-template-variable {
-  color: #addb67
+  color: #addb67 !important
 }
 /* diff */
 .hljs-addition {
-  color: #addb67ff;
+  color: #addb67 !importantff;
   font-style: italic
 }
 .hljs-deletion {
-  color: #EF535090;
+  color: #EF5350 !important90;
   font-style: italic
 }

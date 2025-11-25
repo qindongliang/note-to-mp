@@ -12,23 +12,23 @@ Qt Creator dark color scheme
 
 */
 .hljs {
-  color: #aaaaaa;
-  background: #000000
+  color: #aaaaaa !important;
+  background: #000000 !important
 }
 .hljs-strong,
 .hljs-emphasis {
-  color: #a8a8a2
+  color: #a8a8a2 !important
 }
 .hljs-bullet,
 .hljs-quote,
 .hljs-number,
 .hljs-regexp,
 .hljs-literal {
-  color: #ff55ff
+  color: #ff55ff !important
 }
 .hljs-code
 .hljs-selector-class {
-  color: #aaaaff
+  color: #aaaaff !important
 }
 .hljs-emphasis,
 .hljs-stronge,
@@ -41,21 +41,21 @@ Qt Creator dark color scheme
 .hljs-section,
 .hljs-symbol,
 .hljs-name {
-  color: #ffff55
+  color: #ffff55 !important
 }
 .hljs-subst,
 .hljs-tag,
 .hljs-title {
-  color: #aaaaaa
+  color: #aaaaaa !important
 }
 .hljs-attribute {
-  color: #ff5555
+  color: #ff5555 !important
 }
 .hljs-variable,
 .hljs-params,
 .hljs-title.class_,
 .hljs-class .hljs-title {
-  color: #8888ff
+  color: #8888ff !important
 }
 .hljs-string,
 .hljs-selector-id,
@@ -67,10 +67,10 @@ Qt Creator dark color scheme
 .hljs-template-variable,
 .hljs-addition,
 .hljs-link {
-  color: #ff55ff
+  color: #ff55ff !important
 }
 .hljs-comment,
 .hljs-meta,
 .hljs-deletion {
-  color: #55ffff
+  color: #55ffff !important
 }
