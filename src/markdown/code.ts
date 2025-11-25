@@ -172,7 +172,7 @@ export class CodeRenderer extends Extension {
 		}
 		const codeElement = '<code class="' + classes.join(' ') + '">' + lines.join('\n') + '</code>';
 		const preElement = '<pre style="max-width:1000% !important;">' + codeElement + '</pre>';
-		const html = codeSection + preElement + '</section>';
+		let html = codeSection + preElement + '</section>';
 
 		if (!this.settings.isAuthKeyVaild()) {
 			return html;
