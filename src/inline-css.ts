@@ -200,6 +200,23 @@ ul {
   width: 100%;
 }
 
+/* --------------------------------------- */
+/* 代码换行与移动端保护 */
+/* --------------------------------------- */
+.note-to-mp pre,
+.note-to-mp pre code,
+.note-to-mp .code-section pre,
+.note-to-mp .code-section code {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+.note-to-mp pre code,
+.note-to-mp .code-section code {
+  display: block !important;
+  width: 100% !important;
+}
+
 .note-embed-svg-right {
   display: flex;
   flex-direction: row;

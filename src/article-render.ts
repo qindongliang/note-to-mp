@@ -129,9 +129,39 @@ export class ArticleRender implements MDRendererCallback {
     return this.articleDiv.querySelector('#article-section') as HTMLElement;
   }
 
+  enforceCodeBlockWhitespace(html: string) {
+    const doc = sanitizeHTMLToDom(html);
+    const root = doc.firstChild as HTMLElement | null;
+    if (!root) {
+      return html;
+    }
+
+    root.querySelectorAll('pre').forEach((el) => {
+      const pre = el as HTMLElement;
+      pre.style.setProperty('white-space', 'pre-wrap', 'important');
+      pre.style.setProperty('word-break', 'break-word', 'important');
+    });
+
+    root.querySelectorAll('.code-section code, pre code').forEach((el) => {
+      const code = el as HTMLElement;
+      code.style.setProperty('white-space', 'pre-wrap', 'important');
+      code.style.setProperty('word-break', 'break-word', 'important');
+      code.style.setProperty('display', 'block', 'important');
+      code.style.setProperty('width', '100%', 'important');
+      code.style.removeProperty('text-wrap');
+      const htmlContent = code.innerHTML;
+      if (htmlContent && htmlContent.includes('\n')) {
+        code.innerHTML = htmlContent.replace(/\n/g, '<br/>');
+      }
+    });
+
+    return root.outerHTML;
+  }
+
   getArticleContent() {
     const content = this.articleDiv.innerHTML;
     let html = applyCSS(content, this.getCSS());
+    html = this.enforceCodeBlockWhitespace(html);
     // 微信平台HTML清理规则
     html = html.replace(/rel="noopener nofollow"/g, '');
     html = html.replace(/target="_blank"/g, '');
