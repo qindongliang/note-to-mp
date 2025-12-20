@@ -18,7 +18,8 @@
     margin: 1em 0;
     padding: 0;
     color: #333;
-    text-align: justify;
+    text-align: left;
+    /* 修复微信移动端兼容性 */
     line-height: 1.75;
     font-size: 14px;
     letter-spacing: 1.5px;
@@ -84,100 +85,121 @@
 
 /* 1. 容器：使用 flex 布局 */
 .note-to-mp section.code-section {
-	display: flex;
-	align-items: flex-start; /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
-	background-color: #fafaf9;
-	border-radius: 8px;
-	border-top: 3px solid #007aff;
-	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
-	margin: 1.5em 8px;
-	overflow: hidden; /* 裁剪圆角 */
-	min-height: auto; /* 确保高度自适应内容 */
-	box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
+    background-color: #fafaf9;
+    border-radius: 8px;
+    border-top: 3px solid #007aff;
+    box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+    margin: 1.5em 8px;
+    overflow: hidden;
+    /* 裁剪圆角 */
+    min-height: auto;
+    /* 确保高度自适应内容 */
+    box-sizing: border-box;
 }
 
 /* 2. 行号 <ul> */
 .note-to-mp section.code-section ul {
-	list-style: none;
-	padding: 1.2em 0.5em;
-	margin: 0;
-	background-color: #f3f3f3;
-	color: #999;
-	font-size: 14px;
-	line-height: 1.5;
-	text-align: right;
-	user-select: none;
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	width: 3em; /* 固定行号区域宽度，防止宽度波动 */
-	flex-shrink: 0; /* 防止行号区域被压缩 */
+    list-style: none;
+    padding: 1.2em 0.5em;
+    margin: 0;
+    background-color: #f3f3f3;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: right;
+    user-select: none;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    width: 3em;
+    /* 固定行号区域宽度，防止宽度波动 */
+    flex-shrink: 0;
+    /* 防止行号区域被压缩 */
 }
 
 /* 修复行号 li 元素的默认边距 */
 .note-to-mp section.code-section ul li {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* 3. 代码 <pre> 容器 (负责滚动) */
 .note-to-mp section.code-section pre {
-	margin: 0;
-	border: none;
-	box-shadow: none;
-	border-top: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-top: none;
 
-	flex-grow: 1; /* 占据剩余空间 */
-	overflow-x: auto !important; /* 关键：开启横向滚动 */
-	overflow-y: visible !important; /* 确保内容高度自适应，避免多余空白 */
+    flex-grow: 1;
+    /* 占据剩余空间 */
+    overflow-x: auto !important;
+    /* 关键：开启横向滚动 */
+    overflow-y: visible !important;
+    /* 确保内容高度自适应，避免多余空白 */
 
-	padding: 1.2em; /* 统一内边距 */
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    padding: 1.2em;
+    /* 统一内边距 */
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 4. 每一行代码 <code> (负责换行和宽度) */
 .note-to-mp section.code-section pre code {
-	display: block !important;   /* 强制换行 */
-	white-space: pre !important;   /* 保留行内空格 */
+    display: block !important;
+    /* 强制换行 */
+    white-space: pre !important;
+    /* 保留行内空格 */
 
-	/* * 关键修复：
+    /* * 关键修复：
 	 * 1. 宽度由内容撑开
 	 * 2. 短行也必须撑满
 	 */
-	width: max-content;
-	min-width: 100%;
+    width: max-content;
+    min-width: 100%;
 
-	/* 重置样式 */
-	padding: 0;
-	font-size: 14px;
-	line-height: 1.5; /* 确保与行号行高一致 */
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    /* 重置样式 */
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    /* 确保与行号行高一致 */
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 修复：隐藏空code元素，防止产生多余空行 */
 .note-to-mp section.code-section pre code:empty {
-	display: none !important;
+    display: none !important;
 }
 
 /* 列表样式 */
 .note-to-mp ul,
 .note-to-mp ol {
     margin: 1em 0;
-    padding-left: 2.5em; /* 调整左侧内边距，确保项目符号不溢出 */
-    list-style-position: outside; /* 项目符号在内容区域外 */
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    padding-left: 2.5em;
+    /* 调整左侧内边距，确保项目符号不溢出 */
+    list-style-position: outside;
+    /* 项目符号在内容区域外 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp li {
     margin: 0.5em 0;
     color: #333;
     line-height: 1.75;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 修复微信移动端兼容性 */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 /* 链接样式 */
@@ -277,7 +299,7 @@
     border-radius: 8px;
     display: block;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .note-to-mp .gallery-container .gallery-scroll {
@@ -300,12 +322,14 @@
 .note-to-mp .longimage-container img {
     max-width: 100%;
     height: auto;
-    max-height: none; /* 移除高度限制，让长图自然显示 */
+    max-height: none;
+    /* 移除高度限制，让长图自然显示 */
     object-fit: contain;
     border-radius: 8px;
     display: block;
-    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    /* 覆盖主题的 margin: 1.5em auto */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(31, 68, 172, 0.1);
 }
 
@@ -324,12 +348,14 @@
 /* 针对腾讯科技主题的移动端优化 */
 @media screen and (max-width: 768px) {
     .note-to-mp .longimage-container {
-        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        margin: 1em 4px 1.5em;
+        /* 移动端减小边距 */
         padding: 12px;
     }
 
-.note-to-mp .longimage-container .longimage-scroll {
-        max-height: 70vh; /* 移动端稍微减小高度 */
+    .note-to-mp .longimage-container .longimage-scroll {
+        max-height: 70vh;
+        /* 移动端稍微减小高度 */
     }
 }
 

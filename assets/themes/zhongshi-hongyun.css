@@ -21,7 +21,8 @@
     margin: 1.2em 0;
     letter-spacing: 0.1em;
     color: #333333;
-    text-align: justify;
+    text-align: left;
+    /* 修复微信移动端兼容性 */
     line-height: 2;
     font-size: 14px;
 }
@@ -38,7 +39,7 @@
     letter-spacing: 0.1em;
     line-height: 1.2;
     width: 80%;
-    background-image: repeating-linear-gradient(45deg, rgba(139,30,34,0.03), rgba(139,30,34,0.03) 2px, transparent 2px, transparent 8px);
+    background-image: repeating-linear-gradient(45deg, rgba(139, 30, 34, 0.03), rgba(139, 30, 34, 0.03) 2px, transparent 2px, transparent 8px);
     border-top: 2px solid #8b1e22;
     border-bottom: 2px solid #8b1e22;
     font-family: 'KaiTi', 'STKaiti', 'SimSun', serif;
@@ -48,7 +49,7 @@
     margin: 2em 0 0.75em 0px;
     padding: 0px 0px 0.5em 12px;
     border-left: 4px solid #8b1e22;
-    border-bottom: 1px dashed rgba(139,30,34,0.4);
+    border-bottom: 1px dashed rgba(139, 30, 34, 0.4);
     font-size: 19px;
     font-weight: bold;
     line-height: 1.2;
@@ -64,9 +65,9 @@
     margin: 2em 0 0.75em;
     font-weight: 600;
     color: #8b1e22;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.7);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
     border-left: 4px solid #8b1e22;
-    border-bottom: 1px dashed rgba(139,30,34,0.4);
+    border-bottom: 1px dashed rgba(139, 30, 34, 0.4);
 }
 
 .note-to-mp h4 {
@@ -78,7 +79,7 @@
     letter-spacing: 0.1em;
     font-family: 'KaiTi', 'STKaiti', serif;
     border-left: 4px solid #8b1e22;
-    border-bottom: 1px dashed rgba(139,30,34,0.3);
+    border-bottom: 1px dashed rgba(139, 30, 34, 0.3);
 }
 
 .note-to-mp h5 {
@@ -203,12 +204,17 @@
 /* 无序列表 */
 .note-to-mp ul {
     margin: 1em 0;
-    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
+    padding: 0 0 0 2.5em;
+    /* 增加左侧内边距，为项目符号预留空间 */
     font-size: 14px;
-    list-style-type: disc; /* 明确设置项目符号类型 */
-    list-style-position: outside; /* 项目符号在内容区域外 */
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    list-style-type: disc;
+    /* 明确设置项目符号类型 */
+    list-style-position: outside;
+    /* 项目符号在内容区域外 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ul li {
@@ -216,20 +222,28 @@
     padding: 0;
     line-height: 1.8;
     font-size: 14px;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 /* 有序列表 */
 .note-to-mp ol {
     margin: 1em 0;
-    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
+    padding: 0 0 0 2.5em;
+    /* 增加左侧内边距，为项目符号预留空间 */
     font-size: 14px;
-    list-style-type: decimal; /* 明确设置项目符号类型 */
-    list-style-position: outside; /* 项目符号在内容区域外 */
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    list-style-type: decimal;
+    /* 明确设置项目符号类型 */
+    list-style-position: outside;
+    /* 项目符号在内容区域外 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ol li {
@@ -237,9 +251,12 @@
     padding: 0;
     line-height: 1.8;
     font-size: 14px;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 /* 分割线 */
@@ -247,7 +264,7 @@
     height: 1px;
     border: none;
     margin: 2.5em auto;
-    background: linear-gradient(to right, rgba(139,30,34,0), rgba(139,30,34,0.5), rgba(139,30,34,0));
+    background: linear-gradient(to right, rgba(139, 30, 34, 0), rgba(139, 30, 34, 0.5), rgba(139, 30, 34, 0));
     width: 80%;
 }
 
@@ -258,81 +275,95 @@
 
 /* 1. 容器：使用 flex 布局 */
 .note-to-mp section.code-section {
-	display: flex;
-	align-items: flex-start; /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
-	background-color: #fafaf9;
-	border-radius: 8px;
-	border-top: 3px solid rgb(200, 100, 66);
-	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
-	margin: 1.5em 8px;
-	overflow: hidden; /* 裁剪圆角 */
-	min-height: auto; /* 确保高度自适应内容 */
-	box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
+    background-color: #fafaf9;
+    border-radius: 8px;
+    border-top: 3px solid rgb(200, 100, 66);
+    box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+    margin: 1.5em 8px;
+    overflow: hidden;
+    /* 裁剪圆角 */
+    min-height: auto;
+    /* 确保高度自适应内容 */
+    box-sizing: border-box;
 }
 
 /* 2. 行号 <ul> */
 .note-to-mp section.code-section ul {
-	list-style: none;
-	padding: 1.2em 0.5em;
-	margin: 0;
-	background-color: #f3f3f3;
-	color: #999;
-	font-size: 14px;
-	line-height: 1.5;
-	text-align: right;
-	user-select: none;
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	width: 3em; /* 固定行号区域宽度，防止宽度波动 */
-	flex-shrink: 0; /* 防止行号区域被压缩 */
+    list-style: none;
+    padding: 1.2em 0.5em;
+    margin: 0;
+    background-color: #f3f3f3;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: right;
+    user-select: none;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    width: 3em;
+    /* 固定行号区域宽度，防止宽度波动 */
+    flex-shrink: 0;
+    /* 防止行号区域被压缩 */
 }
 
 /* 修复行号 li 元素的默认边距 */
 .note-to-mp section.code-section ul li {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* 3. 代码 <pre> 容器 (负责滚动) */
 .note-to-mp section.code-section pre {
-	margin: 0;
-	border: none;
-	box-shadow: none;
-	border-top: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-top: none;
 
-	flex-grow: 1; /* 占据剩余空间 */
-	overflow-x: auto !important; /* 关键：开启横向滚动 */
-	overflow-y: visible !important; /* 确保内容高度自适应，避免多余空白 */
+    flex-grow: 1;
+    /* 占据剩余空间 */
+    overflow-x: auto !important;
+    /* 关键：开启横向滚动 */
+    overflow-y: visible !important;
+    /* 确保内容高度自适应，避免多余空白 */
 
-	padding: 1.2em; /* 统一内边距 */
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    padding: 1.2em;
+    /* 统一内边距 */
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 4. 每一行代码 <code> (负责换行和宽度) */
 .note-to-mp section.code-section pre code {
-	display: block !important;   /* 强制换行 */
-	white-space: pre !important;   /* 保留行内空格 */
+    display: block !important;
+    /* 强制换行 */
+    white-space: pre !important;
+    /* 保留行内空格 */
 
-	/* * 关键修复：
+    /* * 关键修复：
 	 * 1. 宽度由内容撑开
 	 * 2. 短行也必须撑满
 	 */
-	width: max-content;
-	min-width: 100%;
+    width: max-content;
+    min-width: 100%;
 
-	/* 重置样式 */
-	padding: 0;
-	font-size: 14px;
-	line-height: 1.5; /* 确保与行号行高一致 */
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    /* 重置样式 */
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    /* 确保与行号行高一致 */
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 修复：隐藏空code元素，防止产生多余空行 */
 .note-to-mp section.code-section pre code:empty {
-	display: none !important;
+    display: none !important;
 }
 
 /* 表格样式 */
@@ -340,25 +371,25 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1.5em 0;
-    border: 1px solid rgba(139,30,34,0.3);
+    border: 1px solid rgba(139, 30, 34, 0.3);
 }
 
 .note-to-mp thead tr {
-    background: linear-gradient(to bottom, rgba(139,30,34,0.15), rgba(139,30,34,0.05));
+    background: linear-gradient(to bottom, rgba(139, 30, 34, 0.15), rgba(139, 30, 34, 0.05));
 }
 
 .note-to-mp th {
     padding: 0.8em;
     text-align: left;
     font-weight: bold;
-    border-bottom: 2px solid rgba(139,30,34,0.5);
+    border-bottom: 2px solid rgba(139, 30, 34, 0.5);
     font-size: 14px;
     color: #8b1e22;
 }
 
 .note-to-mp td {
     padding: 0.8em;
-    border-bottom: 1px solid rgba(139,30,34,0.1);
+    border-bottom: 1px solid rgba(139, 30, 34, 0.1);
     font-size: 14px;
     color: #333333;
 }
@@ -367,7 +398,7 @@
 .note-to-mp a {
     color: #8b1e22;
     text-decoration: none;
-    border-bottom: 1px solid rgba(139,30,34,0.3);
+    border-bottom: 1px solid rgba(139, 30, 34, 0.3);
 }
 
 /* 图片样式 */
@@ -376,7 +407,7 @@
     margin: 1.5em auto;
     display: block;
     border: 8px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .note-to-mp figure {
@@ -420,7 +451,7 @@
 .note-to-mp .footnotes {
     margin-top: 2em;
     padding-top: 1.5em;
-    border-top: 1px solid rgba(139,30,34,0.2);
+    border-top: 1px solid rgba(139, 30, 34, 0.2);
 }
 
 .note-to-mp .footnotes ol {
@@ -456,7 +487,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(139, 30, 34, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5);
     position: relative;
-    background-image: repeating-linear-gradient(45deg, rgba(139,30,34,0.01), rgba(139,30,34,0.01) 1px, transparent 1px, transparent 12px);
+    background-image: repeating-linear-gradient(45deg, rgba(139, 30, 34, 0.01), rgba(139, 30, 34, 0.01) 1px, transparent 1px, transparent 12px);
 }
 
 .note-to-mp .gallery-title,
@@ -473,7 +504,7 @@
     font-family: 'KaiTi', 'STKaiti', 'SimSun', serif;
     font-weight: bold;
     box-shadow: 0 4px 16px rgba(139, 30, 34, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    background-image: repeating-linear-gradient(45deg, rgba(139,30,34,0.02), rgba(139,30,34,0.02) 1px, transparent 1px, transparent 6px);
+    background-image: repeating-linear-gradient(45deg, rgba(139, 30, 34, 0.02), rgba(139, 30, 34, 0.02) 1px, transparent 1px, transparent 6px);
 }
 
 /* 画廊图片样式优化 */
@@ -508,14 +539,16 @@
 .note-to-mp .longimage-container img {
     max-width: 100%;
     height: auto;
-    max-height: none; /* 移除高度限制，让长图自然显示 */
+    max-height: none;
+    /* 移除高度限制，让长图自然显示 */
     object-fit: contain;
     border-radius: 8px;
     display: block;
-    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
+    margin: 0 auto;
+    /* 覆盖主题的 margin: 1.5em auto */
     box-shadow: 0 4px 16px rgba(139, 30, 34, 0.2);
     border: 2px solid rgba(139, 30, 34, 0.1);
-    background: linear-gradient(45deg, rgba(139,30,34,0.02), rgba(139,30,34,0.02) 1px, transparent 1px, transparent 12px);
+    background: linear-gradient(45deg, rgba(139, 30, 34, 0.02), rgba(139, 30, 34, 0.02) 1px, transparent 1px, transparent 12px);
 }
 
 .note-to-mp .longimage-container .longimage-scroll {
@@ -528,19 +561,21 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     border-radius: 8px;
-    background: repeating-linear-gradient(45deg, rgba(139,30,34,0.01), rgba(139,30,34,0.01) 1px, transparent 1px, transparent 12px);
+    background: repeating-linear-gradient(45deg, rgba(139, 30, 34, 0.01), rgba(139, 30, 34, 0.01) 1px, transparent 1px, transparent 12px);
 }
 
 /* 针对中式红韵主题的移动端优化 */
 @media screen and (max-width: 768px) {
     .note-to-mp .longimage-container {
-        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        margin: 1em 4px 1.5em;
+        /* 移动端减小边距 */
         padding: 12px;
         border-radius: 6px;
     }
 
     .note-to-mp .longimage-container .longimage-scroll {
-        max-height: 70vh; /* 移动端稍微减小高度 */
+        max-height: 70vh;
+        /* 移动端稍微减小高度 */
         border-radius: 6px;
     }
 
@@ -671,7 +706,7 @@
     letter-spacing: 0.1em;
     font-family: 'KaiTi', 'STKaiti', serif;
     border-left: 4px solid #8b1e22;
-    border-bottom: 1px dashed rgba(139,30,34,0.3);
+    border-bottom: 1px dashed rgba(139, 30, 34, 0.3);
 }
 
 /* 覆盖默认行号显示 */

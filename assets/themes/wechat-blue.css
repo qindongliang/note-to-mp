@@ -111,15 +111,7 @@
     position: relative;
 }
 
-.note-to-mp blockquote::before {
-    content: '"';
-    position: absolute;
-    left: 8px;
-    top: -10px;
-    font-size: 2em;
-    color: rgba(5, 212, 205, 0.2);
-    font-family: Georgia, serif;
-}
+/* 移除了 blockquote::before 的装饰引号，避免样式兼容性问题 */
 
 .note-to-mp blockquote p {
     margin: 0;
