@@ -16,7 +16,8 @@
     margin: 1.2em 0;
     letter-spacing: 0.1em;
     color: #4e5969;
-    text-align: justify;
+    text-align: left;
+    /* 修复微信移动端：justify 会导致行内元素周围出现异常空格 */
     line-height: 1.8;
     font-size: 14px;
 }
@@ -29,10 +30,10 @@
     font-size: 21px;
     font-weight: 600;
     text-align: center;
-    background: linear-gradient(to right, rgba(22,119,255,0.02), rgba(5,212,205,0.05), rgba(22,119,255,0.02));
+    background: linear-gradient(to right, rgba(22, 119, 255, 0.02), rgba(5, 212, 205, 0.05), rgba(22, 119, 255, 0.02));
     border-radius: 4px;
     border-top: 3px solid #1677ff;
-    border-bottom: 1px solid rgba(5,212,205,0.5);
+    border-bottom: 1px solid rgba(5, 212, 205, 0.5);
 }
 
 .note-to-mp h2 {
@@ -44,7 +45,7 @@
     font-weight: 600;
     text-align: center;
     border-radius: 8px 24px 8px 24px;
-    box-shadow: 0 4px 12px rgba(5,212,205,0.15);
+    box-shadow: 0 4px 12px rgba(5, 212, 205, 0.15);
     letter-spacing: 0.1em;
 }
 
@@ -54,10 +55,10 @@
     border-radius: 6px;
     line-height: 1.6;
     border-left: 4px solid #1677ff;
-    border-right: 1px solid rgba(22,119,255,0.1);
-    border-bottom: 1px solid rgba(22,119,255,0.1);
-    border-top: 1px solid rgba(22,119,255,0.1);
-    background: linear-gradient(to right, rgba(22,119,255,0.08), rgba(5,212,205,0.03));
+    border-right: 1px solid rgba(22, 119, 255, 0.1);
+    border-bottom: 1px solid rgba(22, 119, 255, 0.1);
+    border-top: 1px solid rgba(22, 119, 255, 0.1);
+    background: linear-gradient(to right, rgba(22, 119, 255, 0.08), rgba(5, 212, 205, 0.03));
     color: #1677ff;
     margin: 2em 0 0.75em;
     font-weight: 600;
@@ -71,8 +72,8 @@
     border-radius: 6px;
     padding: 0.3em 0 0.3em 8px;
     border-left: 3px solid #05d4cd;
-    border-bottom: 1px dashed rgba(5,212,205,0.3);
-    background: linear-gradient(to right, rgba(5,212,205,0.06), rgba(22,119,255,0.02));
+    border-bottom: 1px dashed rgba(5, 212, 205, 0.3);
+    background: linear-gradient(to right, rgba(5, 212, 205, 0.06), rgba(22, 119, 255, 0.02));
 }
 
 .note-to-mp h5 {
@@ -81,8 +82,8 @@
     font-size: 14px;
     font-weight: 600;
     padding: 0.2em 0 0.2em 6px;
-    border-left: 2px solid rgba(22,119,255,0.7);
-    background: linear-gradient(to right, rgba(22,119,255,0.04), rgba(5,212,205,0.01));
+    border-left: 2px solid rgba(22, 119, 255, 0.7);
+    background: linear-gradient(to right, rgba(22, 119, 255, 0.04), rgba(5, 212, 205, 0.01));
 }
 
 .note-to-mp h6 {
@@ -91,8 +92,8 @@
     font-size: 13px;
     font-weight: 600;
     padding: 0.1em 0 0.1em 4px;
-    border-left: 2px solid rgba(5,212,205,0.5);
-    background: linear-gradient(to right, rgba(5,212,205,0.03), rgba(22,119,255,0.01));
+    border-left: 2px solid rgba(5, 212, 205, 0.5);
+    background: linear-gradient(to right, rgba(5, 212, 205, 0.03), rgba(22, 119, 255, 0.01));
 }
 
 /* 引用块 */
@@ -104,9 +105,9 @@
     color: #4e5969;
     background: #f2f3f5;
     margin: 1.5em 0;
-    border-bottom: 0.2px solid rgba(5,212,205,0.1);
-    border-top: 0.2px solid rgba(5,212,205,0.1);
-    border-right: 0.2px solid rgba(5,212,205,0.1);
+    border-bottom: 0.2px solid rgba(5, 212, 205, 0.1);
+    border-top: 0.2px solid rgba(5, 212, 205, 0.1);
+    border-right: 0.2px solid rgba(5, 212, 205, 0.1);
     position: relative;
 }
 
@@ -116,7 +117,7 @@
     left: 8px;
     top: -10px;
     font-size: 2em;
-    color: rgba(5,212,205,0.2);
+    color: rgba(5, 212, 205, 0.2);
     font-family: Georgia, serif;
 }
 
@@ -193,17 +194,22 @@
 
 /* 无序列表 */
 .note-to-mp ul {
-	margin: 1em 0;
-    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
+    margin: 1em 0;
+    padding: 0 0 0 2.5em;
+    /* 增加左侧内边距，为项目符号预留空间 */
     text-align: left;
     line-height: 1.8;
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
-    list-style-type: disc; /* 明确设置项目符号类型 */
-    list-style-position: outside; /* 项目符号在内容区域外 */
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    list-style-type: disc;
+    /* 明确设置项目符号类型 */
+    list-style-position: outside;
+    /* 项目符号在内容区域外 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ul li {
@@ -214,24 +220,32 @@
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 /* 有序列表 */
 .note-to-mp ol {
-	margin: 1em 0;
-    padding: 0 0 0 2.5em; /* 增加左侧内边距，为项目符号预留空间 */
+    margin: 1em 0;
+    padding: 0 0 0 2.5em;
+    /* 增加左侧内边距，为项目符号预留空间 */
     text-align: left;
     line-height: 1.8;
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
-    list-style-type: decimal; /* 明确设置项目符号类型 */
-    list-style-position: outside; /* 项目符号在内容区域外 */
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    list-style-type: decimal;
+    /* 明确设置项目符号类型 */
+    list-style-position: outside;
+    /* 项目符号在内容区域外 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp ol li {
@@ -242,9 +256,12 @@
     font-family: 'PingFang SC', -apple-system-font, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', Arial, sans-serif;
     font-size: 14px;
     color: #4e5969;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 /* 分割线 */
@@ -262,81 +279,95 @@
 
 /* 1. 容器：使用 flex 布局 */
 .note-to-mp section.code-section {
-	display: flex;
-	align-items: flex-start; /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
-	background-color: #fafaf9;
-	border-radius: 8px;
-	border-top: 3px solid #05d4cd;
-	box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
-	margin: 1.5em 8px;
-	overflow: hidden; /* 裁剪圆角 */
-	min-height: auto; /* 确保高度自适应内容 */
-	box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    /* 对齐顶部，防止因内容高度差异产生的对齐问题 */
+    background-color: #fafaf9;
+    border-radius: 8px;
+    border-top: 3px solid #05d4cd;
+    box-shadow: 0 2px 8px rgba(200, 100, 66, 0.1);
+    margin: 1.5em 8px;
+    overflow: hidden;
+    /* 裁剪圆角 */
+    min-height: auto;
+    /* 确保高度自适应内容 */
+    box-sizing: border-box;
 }
 
 /* 2. 行号 <ul> */
 .note-to-mp section.code-section ul {
-	list-style: none;
-	padding: 1.2em 0.5em;
-	margin: 0;
-	background-color: #f3f3f3;
-	color: #999;
-	font-size: 14px;
-	line-height: 1.5;
-	text-align: right;
-	user-select: none;
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	width: 3em; /* 固定行号区域宽度，防止宽度波动 */
-	flex-shrink: 0; /* 防止行号区域被压缩 */
+    list-style: none;
+    padding: 1.2em 0.5em;
+    margin: 0;
+    background-color: #f3f3f3;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: right;
+    user-select: none;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    width: 3em;
+    /* 固定行号区域宽度，防止宽度波动 */
+    flex-shrink: 0;
+    /* 防止行号区域被压缩 */
 }
 
 /* 修复行号 li 元素的默认边距 */
 .note-to-mp section.code-section ul li {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* 3. 代码 <pre> 容器 (负责滚动) */
 .note-to-mp section.code-section pre {
-	margin: 0;
-	border: none;
-	box-shadow: none;
-	border-top: none;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-top: none;
 
-	flex-grow: 1; /* 占据剩余空间 */
-	overflow-x: auto !important; /* 关键：开启横向滚动 */
-	overflow-y: visible !important; /* 确保内容高度自适应，避免多余空白 */
+    flex-grow: 1;
+    /* 占据剩余空间 */
+    overflow-x: auto !important;
+    /* 关键：开启横向滚动 */
+    overflow-y: visible !important;
+    /* 确保内容高度自适应，避免多余空白 */
 
-	padding: 1.2em; /* 统一内边距 */
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    padding: 1.2em;
+    /* 统一内边距 */
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 4. 每一行代码 <code> (负责换行和宽度) */
 .note-to-mp section.code-section pre code {
-	display: block !important;   /* 强制换行 */
-	white-space: pre !important;   /* 保留行内空格 */
+    display: block !important;
+    /* 强制换行 */
+    white-space: pre !important;
+    /* 保留行内空格 */
 
-	/* * 关键修复：
+    /* * 关键修复：
 	 * 1. 宽度由内容撑开
 	 * 2. 短行也必须撑满
 	 */
-	width: max-content;
-	min-width: 100%;
+    width: max-content;
+    min-width: 100%;
 
-	/* 重置样式 */
-	padding: 0;
-	font-size: 14px;
-	line-height: 1.5; /* 确保与行号行高一致 */
-	font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-	box-sizing: border-box;
-	min-height: 100%; /* 确保与行号区域高度一致 */
+    /* 重置样式 */
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    /* 确保与行号行高一致 */
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    box-sizing: border-box;
+    min-height: 100%;
+    /* 确保与行号区域高度一致 */
 }
 
 /* 修复：隐藏空code元素，防止产生多余空行 */
 .note-to-mp section.code-section pre code:empty {
-	display: none !important;
+    display: none !important;
 }
 
 /* 表格样式 */
@@ -346,11 +377,11 @@
     margin: 1.5em 0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .note-to-mp thead tr {
-    background: linear-gradient(to right, rgba(22,119,255,0.05), rgba(5,212,205,0.05));
+    background: linear-gradient(to right, rgba(22, 119, 255, 0.05), rgba(5, 212, 205, 0.05));
 }
 
 .note-to-mp th {
@@ -358,27 +389,34 @@
     text-align: left;
     font-weight: 600;
     color: #1677ff;
-    border-bottom: 1px solid rgba(5,212,205,0.1);
+    border-bottom: 1px solid rgba(5, 212, 205, 0.1);
     font-size: 14px;
 }
 
 .note-to-mp td {
     padding: 10px 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     color: #4e5969;
     font-size: 14px;
 }
 
 .note-to-mp tbody tr:nth-child(even) {
-    background: rgba(247,248,250,0.7);
+    background: rgba(247, 248, 250, 0.7);
 }
 
 /* 链接样式 */
 .note-to-mp a {
     color: #1677ff;
     text-decoration: none;
-    border-bottom: 1px solid;
-    border-image: linear-gradient(to right, rgba(22, 119, 255, 0), #1677ff, #05d4cd, rgba(5, 212, 205, 0)) 1;
+    border-bottom: 1px solid #1677ff;
+    /* 注意: border-image 在微信移动端 WebView 中会导致文字排版错乱，已移除 */
+}
+
+/* 修复：列表项内的链接需要特殊处理，确保在微信移动端正常显示 */
+.note-to-mp li a {
+    display: inline;
+    word-break: normal;
+    white-space: normal;
 }
 
 /* 图片样式 */
@@ -387,8 +425,8 @@
     border-radius: 8px;
     margin: 1.5em auto;
     display: block;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 1px solid rgba(5,212,205,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(5, 212, 205, 0.1);
 }
 
 .note-to-mp figure {
@@ -415,6 +453,20 @@
 .note-to-mp em {
     color: #05d4cd;
     font-style: italic;
+}
+
+/* 行内代码样式 - 修复长URL/代码导致的换行问题 */
+.note-to-mp code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: 0.9em;
+    padding: 0.1em 0.3em;
+    background-color: rgba(22, 119, 255, 0.08);
+    border-radius: 3px;
+    color: #1677ff;
+    word-break: break-all;
+    /* 允许在任意位置断行，解决长URL问题 */
+    display: inline;
+    /* 确保与文字在同一行 */
 }
 
 /* 脚注样式 */
@@ -448,10 +500,13 @@
 .note-to-mp .footnotes ol {
     list-style-type: decimal;
     margin: 0;
-    padding-left: 1.8em; /* 增加左侧内边距 */
+    padding-left: 1.8em;
+    /* 增加左侧内边距 */
     padding-right: 0;
-    overflow: hidden; /* 防止溢出 */
-    box-sizing: border-box; /* 确保内边距不影响整体宽度 */
+    overflow: hidden;
+    /* 防止溢出 */
+    box-sizing: border-box;
+    /* 确保内边距不影响整体宽度 */
 }
 
 .note-to-mp .footnotes li {
@@ -459,9 +514,12 @@
     color: #8a919f;
     line-height: 1.6;
     margin-bottom: 0.3em;
-    word-wrap: break-word; /* 长文本自动换行 */
-    overflow-wrap: anywhere; /* 允许在任何字符处换行，处理长URL */
-    box-sizing: border-box; /* 确保内边距和边框不影响宽度 */
+    word-wrap: break-word;
+    /* 长文本自动换行 */
+    overflow-wrap: break-word;
+    /* 允许在任何字符处换行，处理长URL */
+    box-sizing: border-box;
+    /* 确保内边距和边框不影响宽度 */
 }
 
 .note-to-mp .footnotes li p {
@@ -507,12 +565,14 @@
 .note-to-mp .longimage-container img {
     max-width: 100%;
     height: auto;
-    max-height: none; /* 移除高度限制，让长图自然显示 */
+    max-height: none;
+    /* 移除高度限制，让长图自然显示 */
     object-fit: contain;
     border-radius: 8px;
     display: block;
-    margin: 0 auto; /* 覆盖主题的 margin: 1.5em auto */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    /* 覆盖主题的 margin: 1.5em auto */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(5, 212, 205, 0.1);
 }
 
@@ -525,18 +585,21 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    border-radius: 8px; /* 添加圆角使滚动区域更美观 */
+    border-radius: 8px;
+    /* 添加圆角使滚动区域更美观 */
 }
 
 /* 针对微信的特殊优化 */
 @media screen and (max-width: 768px) {
     .note-to-mp .longimage-container {
-        margin: 1em 4px 1.5em; /* 移动端减小边距 */
+        margin: 1em 4px 1.5em;
+        /* 移动端减小边距 */
         padding: 12px;
     }
 
     .note-to-mp .longimage-container .longimage-scroll {
-        max-height: 70vh; /* 移动端稍微减小高度 */
+        max-height: 70vh;
+        /* 移动端稍微减小高度 */
     }
 }
 
@@ -549,7 +612,7 @@
     border-radius: 8px;
     display: block;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .note-to-mp .gallery-container .gallery-scroll {
@@ -695,8 +758,8 @@
     border-radius: 6px;
     padding: 0.3em 0 0.3em 8px;
     border-left: 3px solid #05d4cd;
-    border-bottom: 1px dashed rgba(5,212,205,0.3);
-    background: linear-gradient(to right, rgba(5,212,205,0.06), rgba(22,119,255,0.02));
+    border-bottom: 1px dashed rgba(5, 212, 205, 0.3);
+    background: linear-gradient(to right, rgba(5, 212, 205, 0.06), rgba(22, 119, 255, 0.02));
 }
 
 /* 覆盖默认行号显示 */
