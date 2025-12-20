@@ -455,8 +455,10 @@
     font-style: italic;
 }
 
-/* 行内代码样式 - 修复长URL/代码导致的换行问题 */
-.note-to-mp code {
+/* 行内代码样式 - 仅针对段落/列表中的行内代码，不影响代码块 */
+.note-to-mp p>code,
+.note-to-mp li code,
+.note-to-mp blockquote code {
     font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
     font-size: 0.9em;
     padding: 0.1em 0.3em;
@@ -465,8 +467,6 @@
     color: #1677ff;
     word-break: break-all;
     /* 允许在任意位置断行，解决长URL问题 */
-    display: inline;
-    /* 确保与文字在同一行 */
 }
 
 /* 脚注样式 */
