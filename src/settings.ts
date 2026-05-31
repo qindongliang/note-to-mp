@@ -55,7 +55,7 @@ export class NMPSettings {
     }
 
     private constructor() {
-        this.defaultStyle = 'obsidian-light';
+        this.defaultStyle = 'aurora-purple';
         this.defaultHighlight = '默认';
         this.showStyleUI = true;
         this.linkStyle = 'inline';
@@ -75,7 +75,7 @@ export class NMPSettings {
     }
 
     resetStyelAndHighlight() {
-        this.defaultStyle = 'obsidian-light';
+        this.defaultStyle = 'aurora-purple';
         this.defaultHighlight = '默认';
     }
 
