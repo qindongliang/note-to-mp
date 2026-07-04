@@ -23,9 +23,111 @@
 import { requestUrl, RequestUrlParam, getBlobArrayBuffer } from "obsidian";
 
 const PluginHost = 'https://obplugin.sunboshi.tech';
+const DEFAULT_SSH_TOKEN_PROXY_LOCAL_URL = 'http://127.0.0.1:8787/token';
+export const WX_TOKEN_PROXY_WHITELIST_IPS = ['59.110.112.211', '154.8.198.218'];
+export type WxTokenSource = 'direct' | 'pluginHost' | 'customProxy' | 'sshProxy';
+
+function stringifyWxResponse(data: any) {
+    if (!data) {
+        return '空响应';
+    }
+    try {
+        return JSON.stringify(data);
+    } catch (e) {
+        return String(data);
+    }
+}
+
+export function wxIsApiError(data: any) {
+    const code = data?.errcode ?? data?.code;
+    return code !== undefined && code !== null && String(code) !== '0';
+}
+
+function hasSshProxy(sshProxyCommand: string = '') {
+    return sshProxyCommand.trim().length > 0;
+}
+
+function execShell(command: string) {
+    const { exec } = require('child_process');
+    return new Promise<void>((resolve, reject) => {
+        exec(command, { timeout: 15000 }, (error: any, stdout: string, stderr: string) => {
+            if (error) {
+                const output = `${stderr || ''}${stdout || ''}`.trim();
+                reject(new Error(output || error.message));
+                return;
+            }
+            resolve();
+        });
+    });
+}
+
+export function wxGetTokenSource(authkey: string = '', tokenProxyUrl: string = '', sshProxyCommand: string = ''): WxTokenSource {
+    if (hasSshProxy(sshProxyCommand)) {
+        return 'sshProxy';
+    }
+    if (tokenProxyUrl) {
+        return 'customProxy';
+    }
+    if (authkey) {
+        return 'pluginHost';
+    }
+    return 'direct';
+}
+
+export function wxTokenErrorMessage(data: any, source: WxTokenSource = 'direct') {
+    const code = data?.errcode ?? data?.code;
+    const message = data?.errmsg || data?.message || data?.msg || data?.error || '';
+    const codeText = code !== undefined && code !== null ? `（错误码：${code}）` : '';
+    const wxMessage = message ? `\n微信返回：${message}` : `\n原始响应：${stringifyWxResponse(data)}`;
+
+    switch (Number(code)) {
+        case 40164:
+            if (source === 'pluginHost') {
+                return `IP 地址不在公众号白名单中${codeText}。\n当前通过订阅服务获取 token，请在公众号后台「IP 白名单」添加：${WX_TOKEN_PROXY_WHITELIST_IPS.join('、')}。${wxMessage}`;
+            }
+            if (source === 'customProxy') {
+                return `IP 地址不在公众号白名单中${codeText}。\n当前通过自定义 Token 代理获取 token，请确认公众号后台「IP 白名单」已添加该代理服务器的公网出口 IP。${wxMessage}`;
+            }
+            if (source === 'sshProxy') {
+                return `IP 地址不在公众号白名单中${codeText}。\n当前通过 SSH 按需代理获取 token，请确认公众号后台「IP 白名单」已添加 VPS 的公网出口 IP。${wxMessage}`;
+            }
+            return `IP 地址不在公众号白名单中${codeText}。\n当前直接从 Obsidian 访问微信 API，请把这台电脑当前网络的公网出口 IP 添加到公众号后台「IP 白名单」。${wxMessage}`;
+        case 40125:
+            return `AppSecret 错误${codeText}。请检查插件设置里的 AppSecret，必要时在公众号后台重置。${wxMessage}`;
+        case 40013:
+            return `AppID 无效${codeText}。请检查插件设置里的公众号 AppID。${wxMessage}`;
+        case 50002:
+            return `公众号账号受限${codeText}。可能是公众号被冻结或注销，请联系微信客服处理。${wxMessage}`;
+        default:
+            return message
+                ? `获取 token 失败${codeText}：${message}`
+                : `获取 token 失败：微信接口未返回 access_token。${wxMessage}`;
+    }
+}
 
 // 获取token
-export async function wxGetToken(authkey:string, appid:string, secret:string) {
+export async function wxGetToken(authkey:string, appid:string, secret:string, tokenProxyUrl:string = '', sshProxyCommand:string = '', sshProxyCloseCommand:string = '') {
+    const useSshProxy = hasSshProxy(sshProxyCommand);
+    const proxyUrl = useSshProxy ? DEFAULT_SSH_TOKEN_PROXY_LOCAL_URL : tokenProxyUrl;
+    if (useSshProxy) {
+        await execShell(sshProxyCommand);
+    }
+    if (proxyUrl) {
+        try {
+            const res = await requestUrl({
+                url: proxyUrl,
+                method: 'POST',
+                throw: false,
+                contentType: 'application/json',
+                body: JSON.stringify({ appid, secret })
+            });
+            return res;
+        } finally {
+            if (useSshProxy && sshProxyCloseCommand.trim()) {
+                await execShell(sshProxyCloseCommand).catch(() => undefined);
+            }
+        }
+    }
     // 如果authkey为空，直接调用微信API获取token
     if (!authkey) {
         const url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`;

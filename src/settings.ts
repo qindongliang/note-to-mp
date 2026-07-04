@@ -22,6 +22,9 @@
 
 import { wxKeyInfo } from './weixin-api';
 
+export const DEFAULT_SSH_PROXY_COMMAND = 'ssh -p 22222 -S /tmp/notetomp-wx-token-ctl -O exit qindongliang@107.173.86.206 >/dev/null 2>&1 || true; rm -f /tmp/notetomp-wx-token-ctl; ssh -p 22222 -f -N -M -S /tmp/notetomp-wx-token-ctl -L 8787:127.0.0.1:8787 qindongliang@107.173.86.206';
+export const DEFAULT_SSH_PROXY_CLOSE_COMMAND = 'ssh -p 22222 -S /tmp/notetomp-wx-token-ctl -O exit qindongliang@107.173.86.206';
+
 export class NMPSettings {
     defaultStyle: string;
     defaultHighlight: string;
@@ -30,6 +33,9 @@ export class NMPSettings {
     embedStyle: string;
     lineNumber: boolean;
     authKey: string;
+    tokenProxyUrl: string;
+    sshProxyCommand: string;
+    sshProxyCloseCommand: string;
     useCustomCss: boolean;
     customCSSNote: string;
     expertSettingsNote: string;
@@ -63,6 +69,9 @@ export class NMPSettings {
         this.lineNumber = true;
         this.useCustomCss = false;
         this.authKey = '';
+        this.tokenProxyUrl = '';
+        this.sshProxyCommand = DEFAULT_SSH_PROXY_COMMAND;
+        this.sshProxyCloseCommand = DEFAULT_SSH_PROXY_CLOSE_COMMAND;
         this.wxInfo = [];
         this.math = 'latex';
         this.baseCSS = '';
@@ -91,6 +100,9 @@ export class NMPSettings {
             lineNumber,
             defaultHighlight,
             authKey,
+            tokenProxyUrl,
+            sshProxyCommand,
+            sshProxyCloseCommand,
             wxInfo,
             math,
             useCustomCss,
@@ -125,6 +137,11 @@ export class NMPSettings {
         if (authKey) {
             settings.authKey = authKey;
         }
+        if (tokenProxyUrl !== undefined) {
+            settings.tokenProxyUrl = tokenProxyUrl;
+        }
+        settings.sshProxyCommand = sshProxyCommand?.trim() || DEFAULT_SSH_PROXY_COMMAND;
+        settings.sshProxyCloseCommand = sshProxyCloseCommand?.trim() || DEFAULT_SSH_PROXY_CLOSE_COMMAND;
         if (wxInfo) {
             settings.wxInfo = wxInfo;
         }
@@ -169,6 +186,9 @@ export class NMPSettings {
             'embedStyle': settings.embedStyle,
             'lineNumber': settings.lineNumber,
             'authKey': settings.authKey,
+            'tokenProxyUrl': settings.tokenProxyUrl,
+            'sshProxyCommand': settings.sshProxyCommand,
+            'sshProxyCloseCommand': settings.sshProxyCloseCommand,
             'wxInfo': settings.wxInfo,
             'math': settings.math,
             'useCustomCss': settings.useCustomCss,

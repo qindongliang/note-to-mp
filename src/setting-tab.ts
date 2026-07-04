@@ -22,7 +22,7 @@
 
 import { App, TextAreaComponent, PluginSettingTab, Setting, Notice, sanitizeHTMLToDom } from 'obsidian';
 import NoteToMpPlugin from './main';
-import { wxGetToken,wxEncrypt } from './weixin-api';
+import { wxGetToken, wxEncrypt, wxGetTokenSource, wxIsApiError, wxTokenErrorMessage } from './weixin-api';
 import { cleanMathCache } from './markdown/math';
 import { NMPSettings } from './settings';
 import { DocModal } from './doc-modal';
@@ -59,6 +59,8 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 
 	async testWXInfo() {
 		const authKey = this.settings.authKey; // 取消注释，避免undefined
+		const tokenProxyUrl = this.settings.tokenProxyUrl;
+		const tokenSource = wxGetTokenSource(authKey, tokenProxyUrl, this.settings.sshProxyCommand);
 	    const wxInfo = this.settings.wxInfo;
 		if (wxInfo.length == 0) {
 		    new Notice('请先设置公众号信息');
@@ -67,30 +69,32 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 		try {
 			const docUrl = 'https://mp.weixin.qq.com/s/rk5CTPGr5ftly8PtYgSjCQ';
 			for (let wx of wxInfo) {
-				const res = await wxGetToken(authKey, wx.appid, wx.secret);
-				if (res.status != 200) {
-					const data = res.json;
-					const { code, message } = data;
-					let content = message;
-					if (code === 50002) {
-						content = '用户受限，可能是您的公众号被冻结或注销，请联系微信客服处理';
+				const res = await wxGetToken(
+					authKey,
+					wx.appid,
+					wx.secret,
+					tokenProxyUrl,
+					this.settings.sshProxyCommand,
+					this.settings.sshProxyCloseCommand
+				);
+				const data = res.json || {};
+				if (res.status != 200 || wxIsApiError(data)) {
+					let content = wxTokenErrorMessage(data, tokenSource);
+					if (res.status != 200) {
+						content += `\nHTTP 状态码：${res.status}`;
 					}
-					else if (code === 40125) {
-						content = 'AppSecret错误，请检查或者重置，详细操作步骤请参考下方文档';
-					}
-					else if (code === 40164) {
-						content = 'IP地址不在白名单中，请将如下地址添加到白名单：<br>59.110.112.211<br>154.8.198.218<br>详细步骤请参考下方文档';
-					}
+					content = content.replace(/\n/g, '<br>');
 					const modal = new DocModal(this.app, `${wx.name} 测试失败`, content, docUrl);
 					modal.open();
 					break
 				}
 
-				const data = res.json;
 				// 处理两种不同的响应格式：插件主机返回token，微信API直接返回access_token
 				const accessToken = data.token || data.access_token;
 				if (!accessToken || accessToken.length == 0) {
-					new Notice(`${wx.name}|${wx.appid} 测试失败`);
+					const content = wxTokenErrorMessage(data, tokenSource).replace(/\n/g, '<br>');
+					const modal = new DocModal(this.app, `${wx.name} 测试失败`, content, docUrl);
+					modal.open();
 					break
 				}
 				new Notice(`${wx.name} 测试通过`);
@@ -405,6 +409,19 @@ export class NoteToMpSettingTab extends PluginSettingTab {
 				})
 				.inputEl.setAttr('style', 'width: 320px;')
 			}).descEl.setAttr('style', '-webkit-user-select: text; user-select: text;')
+
+		new Setting(containerEl)
+			.setName('自定义 Token 代理 URL')
+			.setDesc('可选。默认已内置按需 SSH 代理，一般无需填写。')
+			.addText(text => {
+				text.setPlaceholder('例如：http://127.0.0.1:8787/token')
+					.setValue(this.settings.tokenProxyUrl)
+					.onChange(async (value) => {
+						this.settings.tokenProxyUrl = value.trim();
+						await this.plugin.saveSettings();
+					})
+					.inputEl.setAttr('style', 'width: 520px;')
+			})
 				
 		
 		let isClear = this.settings.wxInfo.length > 0;

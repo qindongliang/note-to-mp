@@ -26,7 +26,7 @@ import { UploadImageToWx } from './imagelib';
 import { NMPSettings } from './settings';
 import AssetsManager from './assets';
 import InlineCSS from './inline-css';
-import { wxGetToken, wxAddDraft, wxBatchGetMaterial, DraftArticle, DraftImageMediaId, DraftImages, wxAddDraftImages } from './weixin-api';
+import { wxGetToken, wxAddDraft, wxBatchGetMaterial, DraftArticle, DraftImageMediaId, DraftImages, wxAddDraftImages, wxGetTokenSource, wxIsApiError, wxTokenErrorMessage } from './weixin-api';
 import { MDRendererCallback } from './markdown/extension';
 import { MarkedParser } from './markdown/parser';
 import { LocalImageManager, LocalFile } from './markdown/local-file';
@@ -331,16 +331,33 @@ export class ArticleRender implements MDRendererCallback {
   }
 
   async getToken(appid: string) {
-    const secret = this.getSecret(appid);
-    const res = await wxGetToken(this.settings.authKey, appid, secret);
+    if (!appid) {
+      throw new Error('获取 token 失败：未选择公众号 AppID。');
+    }
+    const tokenSource = wxGetTokenSource(this.settings.authKey, this.settings.tokenProxyUrl, this.settings.sshProxyCommand);
+    const secret = tokenSource === 'sshProxy' ? '' : this.getSecret(appid);
+    if (!secret && tokenSource !== 'sshProxy') {
+      throw new Error(`获取 token 失败：未找到 AppID ${appid} 对应的 AppSecret，请在插件设置里重新保存公众号信息。`);
+    }
+    const res = await wxGetToken(
+      this.settings.authKey,
+      appid,
+      secret,
+      this.settings.tokenProxyUrl,
+      this.settings.sshProxyCommand,
+      this.settings.sshProxyCloseCommand
+    );
+    const data = res.json || {};
     if (res.status != 200) {
-      const data = res.json;
-      throw new Error('获取token失败: ' + data.message);
+      throw new Error(`${wxTokenErrorMessage(data, tokenSource)}\nHTTP 状态码：${res.status}`);
+    }
+    if (wxIsApiError(data)) {
+      throw new Error(wxTokenErrorMessage(data, tokenSource));
     }
     // 处理两种不同的响应格式：插件主机返回token，微信API直接返回access_token
-    const token = res.json.token || res.json.access_token;
+    const token = data.token || data.access_token;
     if (!token || token === '') {
-      throw new Error('获取token失败: ' + res.json.message);
+      throw new Error(wxTokenErrorMessage(data, tokenSource));
     }
     return token;
   }
